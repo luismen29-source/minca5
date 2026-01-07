@@ -145,38 +145,66 @@
             <p class="text-slate-400 text-sm mb-6">¿Tienes otro método de pago? Escríbenos por WhatsApp</p> <a href="https://wa.me/573209344964?text=Hola!%20Acabo%20de%20realizar%20mi%20pago%20para%20Minca%20Mágica" target="_blank" class="block w-full py-5 bg-emerald-500 text-slate-950 rounded-2xl text-xl font-black hover:bg-emerald-400 transition-all mb-3"> <span class="flex items-center justify-center gap-3"><i data-lucide="message-circle" size="24"></i> ENVIAR COMPROBANTE</span> </a> <a href="https://wa.me/573209344964?text=Hola!%20Necesito%20ayuda%20con%20mi%20reserva%20de%20Minca%20Mágica" target="_blank" class="block w-full py-4 bg-white/10 text-white rounded-2xl text-base font-bold hover:bg-white/20 transition-all mb-3"> <span class="flex items-center justify-center gap-2"><i data-lucide="help-circle" size="20"></i> NECESITO AYUDA</span> </a> <button onclick="clearAndClose()" class="w-full py-4 bg-slate-800 text-slate-400 rounded-2xl text-sm font-bold hover:bg-slate-700 hover:text-white transition-all mb-2"> Aún no he hecho mi pago </button> <button onclick="closeModal()" class="text-slate-600 text-xs font-bold hover:text-white transition-all mt-2">Cerrar</button>
         </div>
     </div>
-    <section id="registro" class="py-24 bg-slate-50 px-6">
-    <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-sm font-bold text-emerald-600 tracking-[0.3em] uppercase mb-4">Paso Final</h2>
-            <h3 class="text-5xl md:text-6xl font-black tracking-tighter uppercase">REGÍSTRATE A LA <span class="text-emerald-500 italic">AVENTURA</span></h3>
-            <p class="mt-4 text-slate-500 font-medium">Completa tus datos para oficializar tu cupo en nuestra próxima salida.</p>
+    <section id="registro" class="py-24 bg-white px-6 relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-emerald-50 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-slate-100 rounded-full blur-3xl opacity-50"></div>
+
+    <div class="max-w-4xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-emerald-600 font-black tracking-[0.4em] uppercase text-xs mb-4">Paso Final</h2>
+            <h3 class="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-none mb-6">
+                ASEGURA TU <br> <span class="text-emerald-500 italic">EXPERIENCIA</span>
+            </h3>
+            <p class="text-slate-500 text-lg md:text-xl font-medium max-w-xl mx-auto leading-relaxed">
+                Estás a un paso de la Sierra Nevada. Completa tus datos para coordinar tu salida desde Barranquilla.
+            </p>
         </div>
 
-        <div class="bg-white rounded-[3rem] shadow-2xl border border-slate-200 overflow-hidden p-2 md:p-8">
-            <div class="relative w-full overflow-hidden" style="padding-top: 100%;"> <iframe 
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSc0KppvQ4OBLCjhvb6ut0eTon7kYYH52YpuBBi8Ium35bc1qQ/viewform?embedded=true" 
-                    class="absolute top-0 left-0 w-full h-full border-0"
-                    allowfullscreen>
-                    Cargando…
-                </iframe>
-            </div>
+        <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-[3rem] blur opacity-10 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
             
-            <div class="mt-8 p-6 bg-slate-50 rounded-3xl border border-dashed border-slate-300">
-                <label class="flex items-start gap-3 cursor-pointer group">
-                    <input type="checkbox" required class="mt-1 w-5 h-5 border-2 border-emerald-500 rounded text-emerald-500 focus:ring-emerald-500">
-                    <span class="text-xs md:text-sm text-slate-600 leading-tight">
-                        Acepto el <strong>Tratamiento de Datos Personales</strong>. Entiendo que mi información será utilizada exclusivamente para la logística del viaje a Minca y recibir actualizaciones de Luisito el Viajero según la Ley 1581 de 2012.
-                    </span>
-                </label>
+            <div class="relative bg-white border border-slate-100 rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.08)] overflow-hidden">
+                
+                <div class="bg-slate-900 py-6 px-10 flex justify-between items-center">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                        <span class="text-white text-[10px] font-black tracking-widest uppercase">Registro Oficial Luisito el Viajero</span>
+                    </div>
+                    <i data-lucide="shield-check" class="text-emerald-400 w-5 h-5"></i>
+                </div>
+
+                <div class="relative w-full h-[600px] bg-white overflow-hidden">
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSc0KppvQ4OBLCjhvb6ut0eTon7kYYH52YpuBBi8Ium35bc1qQ/viewform?embedded=true" 
+                        class="absolute top-0 left-0 w-full h-[780px] mt-[-145px] border-0"
+                        allowfullscreen>
+                        Cargando…
+                    </iframe>
+                </div>
+
+                <div class="absolute bottom-0 left-0 w-full bg-white py-6 px-10 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="flex items-center gap-3">
+                        <input type="checkbox" required class="w-5 h-5 rounded-md border-slate-300 text-emerald-500 focus:ring-emerald-500 transition-all cursor-pointer">
+                        <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Acepto el tratamiento de mis datos personales</span>
+                    </div>
+                    <div class="flex items-center gap-2 opacity-50">
+                        <i data-lucide="lock" class="w-3 h-3"></i>
+                        <span class="text-[9px] font-black uppercase tracking-[0.2em]">Conexión Encriptada</span>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <p class="text-center mt-8 text-slate-400 text-[10px] uppercase font-bold tracking-widest">
-            Tu información está protegida con seguridad de grado bancario
-        </p>
+
+        <div class="mt-12 text-center">
+            <p class="text-slate-400 text-xs font-bold uppercase tracking-[0.3em] flex items-center justify-center gap-3">
+                <span class="w-8 h-px bg-slate-200"></span>
+                Tu aventura comienza aquí
+                <span class="w-8 h-px bg-slate-200"></span>
+            </p>
+        </div>
     </div>
-</section><!-- Footer -->
+</section>
+-- Footer -->
     <footer class="py-24 bg-slate-950 text-white px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
             <div class="mb-16"> <img src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" alt="Logo Luisito el Viajero" class="h-32 md:h-40 w-auto brightness-0 invert opacity-90"> </div> <a href="https://instagram.com/luisitoelviajero" target="_blank" class="flex items-center gap-4 text-emerald-400 text-4xl font-black transition-all hover:scale-110 tracking-tighter"> <i data-lucide="instagram" style="width: 48px; height: 48px;"></i> @luisitoelviajero </a>
