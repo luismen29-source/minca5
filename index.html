@@ -1,1 +1,200 @@
-<html lang="es" class="scroll-smooth"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Minca Mágica | Luisito el Viajero</title> <!-- Tailwind CSS CDN --> <script src="https://cdn.tailwindcss.com"></script> <!-- Lucide Icons --> <script src="https://unpkg.com/lucide@latest"></script> <style> @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap'); body { font-family: 'Inter', sans-serif; } @keyframes zoom-slow { from { transform: scale(1); } to { transform: scale(1.1); } } .hero-zoom { animation: zoom-slow 20s linear infinite alternate; } .premium-logo-glow:hover { filter: drop-shadow(0 0 15px rgba(52, 211, 153, 0.8)); transform: scale(1.05); } </style> </head> <body class="bg-slate-50 text-slate-900 overflow-x-hidden"> <!-- Top Bar Premium --> <div class="fixed w-full z-[60] bg-emerald-950 text-white py-2 px-6 overflow-hidden border-b border-emerald-800/50"> <div class="max-w-7xl mx-auto flex justify-center items-center gap-3 text-center"> <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> <p class="text-[10px] md:text-xs font-black tracking-[0.3em] uppercase"> Experiencias exclusivas saliendo desde <span class="text-emerald-400">Barranquilla</span> </p> <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> </div> </div> <!-- Navegación --> <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 pt-14 pb-6 px-6"> <div class="max-w-7xl mx-auto flex justify-between items-center"> <div class="flex items-center"> <a href="#"> <img id="logo" src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" alt="Logo Luisito el Viajero" class="h-16 md:h-20 w-auto transition-all duration-500 premium-logo-glow object-contain brightness-0 invert" > </a> </div> <div class="flex items-center gap-8"> <a href="https://instagram.com/luisitoelviajero" target="_blank" class="nav-link hidden md:flex items-center gap-2 font-bold transition-all text-white/90 hover:text-white" > <i data-lucide="instagram" size="20"></i> <span>@luisitoelviajero</span> </a> <a href="#reserva" id="nav-cta" class="px-8 py-3 rounded-2xl font-black tracking-tighter shadow-2xl transition-all transform hover:scale-105 bg-white text-emerald-900 text-sm md:text-base" > RESERVAR AHORA </a> </div> </div> </nav> <!-- Hero Section --> <section class="relative h-screen flex items-center justify-center overflow-hidden"> <div class="absolute inset-0 z-0"> <img src="Donde-queda-Minca-en-Santa-Marta 2.jpg" alt="Portada Minca" class="w-full h-full object-cover hero-zoom" onerror="this.src='https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2070&auto=format&fit=crop'" > <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-slate-50"></div> </div> <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white"> <div class="inline-flex items-center gap-3 px-5 py-2 mb-8 rounded-full bg-black/40 backdrop-blur-md border border-white/20"> <i data-lucide="map-pin" size="14" class="text-emerald-400"></i> <span class="text-white font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs"> Salidas directas desde Barranquilla </span> </div> <h1 class="text-7xl md:text-[10rem] font-black mb-8 tracking-tighter leading-[0.85] drop-shadow-2xl"> MINCA <br /> <span class="text-emerald-400 italic">MÁGICA</span> </h1> <p class="text-2xl md:text-3xl mb-12 text-slate-100 font-light max-w-3xl mx-auto drop-shadow-lg leading-tight"> El escape que tu alma estaba pidiendo. Reconecta con la Sierra Nevada saliendo desde Barranquilla. </p> <div class="flex flex-col sm:flex-row gap-6 justify-center items-center"> <a href="#reserva" class="px-14 py-7 bg-emerald-500 hover:bg-emerald-400 text-white rounded-3xl text-2xl font-black shadow-2xl shadow-emerald-500/50 transition-all transform hover:-translate-y-2" > ¡RESERVAR MI CUPO! </a> </div> </div> </section> <!-- Sección de Viajes Grupales (Editada) --> <section class="py-24 bg-white px-6"> <div class="max-w-7xl mx-auto"> <div class="text-center mb-16"> <h2 class="text-sm font-bold text-emerald-600 tracking-widest uppercase mb-4">Comunidad de Viajeros</h2> <h3 class="text-5xl md:text-6xl font-black tracking-tighter uppercase">Nuestros <span class="text-emerald-500 italic">Viajes Grupales</span></h3> <p class="mt-6 text-slate-500 max-w-2xl mx-auto text-lg italic uppercase tracking-wider">Únete a la familia de Luisito el Viajero</p> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <!-- Foto 1 --> <div class="overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all"> <img src="IMG_2941.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 5"> </div> <!-- Foto 2 --> <div class="overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all md:translate-y-8"> <img src="IMG_2942.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 6"> </div> <!-- Foto 3 --> <div class="overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all"> <img src="IMG_2943.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 7"> </div> </div> </div> </section> <!-- EL PLAN INCLUYE - Detalle Exacto --> <section class="py-24 bg-slate-100 px-6"> <div class="max-w-7xl mx-auto"> <h2 class="text-sm font-bold text-emerald-600 tracking-[0.3em] uppercase text-center mb-4">Todo lo que vivirás</h2> <h3 class="text-5xl md:text-6xl font-black text-center mb-16 tracking-tighter uppercase">EL PLAN <span class="text-emerald-500 italic">INCLUYE</span></h3> <div class="grid lg:grid-cols-3 gap-8"> <!-- City Tour --> <div class="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 hover:shadow-2xl transition-all"> <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mb-8"> <i data-lucide="coffee" class="text-amber-600" size="32"></i> </div> <h4 class="text-2xl font-black mb-6 uppercase tracking-tighter">City Tour Minca</h4> <ul class="space-y-4"> <li class="flex items-start gap-3 text-slate-600"> <i data-lucide="check-circle" class="text-emerald-500 shrink-0 mt-1" size="18"></i> <span>Degustación de café orgánico</span> </li> <li class="flex items-start gap-3 text-slate-600"> <i data-lucide="check-circle" class="text-emerald-500 shrink-0 mt-1" size="18"></i> <span>Famoso pan de chocolate</span> </li> </ul> </div> <!-- Pasadía Sierra Minca --> <div class="bg-emerald-900 p-10 rounded-[3rem] shadow-2xl text-white transform lg:-translate-y-6"> <div class="w-16 h-16 bg-emerald-800 rounded-2xl flex items-center justify-center mb-8"> <i data-lucide="mountain" class="text-emerald-400" size="32"></i> </div> <h4 class="text-2xl font-black mb-6 uppercase tracking-tighter">Pasadía Sierra Minca</h4> <ul class="space-y-4"> <li class="flex items-start gap-3 text-emerald-100 font-bold"> <i data-lucide="utensils" class="text-emerald-400 shrink-0 mt-1" size="18"></i> <span>Almuerzo a la carta</span> </li> <li class="flex items-start gap-3 text-emerald-100"> <i data-lucide="waves" class="text-emerald-400 shrink-0 mt-1" size="18"></i> <span>Acceso a piscinas</span> </li> <li class="flex items-start gap-3 text-emerald-100"> <i data-lucide="layout" class="text-emerald-400 shrink-0 mt-1" size="18"></i> <span>Mallas, hamacas y miradores</span> </li> <li class="flex items-start gap-3 text-emerald-100"> <i data-lucide="smile" class="text-emerald-400 shrink-0 mt-1" size="18"></i> <span>Zona de descanso y juegos</span> </li> </ul> </div> <!-- Sierra Wonders & Transporte --> <div class="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 hover:shadow-2xl transition-all"> <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center mb-8"> <i data-lucide="bird" class="text-indigo-600" size="32"></i> </div> <h4 class="text-2xl font-black mb-6 uppercase tracking-tighter">Wonders & Logística</h4> <ul class="space-y-4"> <li class="flex items-start gap-3 text-slate-600"> <i data-lucide="check-circle" class="text-emerald-500 shrink-0 mt-1" size="18"></i> <span>Visita Sierra Wonders (Colibríes)</span> </li> <li class="flex items-start gap-3 text-slate-600 font-bold"> <i data-lucide="truck" class="text-emerald-500 shrink-0 mt-1" size="18"></i> <span>Transporte interno en 4x4</span> </li> <li class="flex items-start gap-3 text-emerald-600 font-black"> <i data-lucide="bus" class="shrink-0 mt-1" size="18"></i> <span>Ida y regreso desde Barranquilla</span> </li> </ul> </div> </div> </div> </section> <!-- Reserva y Fechas --> <section id="reserva" class="py-24 px-6 bg-white"> <div class="max-w-4xl mx-auto text-center"> <div class="bg-slate-900 rounded-[4rem] p-12 md:p-24 text-white shadow-3xl border border-white/5"> <h2 class="text-5xl font-black mb-12 tracking-tighter uppercase italic">ASEGURA TU CUPO</h2> <div class="grid md:grid-cols-2 gap-8 mb-16 text-left"> <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex items-center gap-5 hover:bg-emerald-500/10 transition-all cursor-default"> <i data-lucide="calendar" class="text-emerald-400" size="32"></i> <div> <div class="font-black text-2xl tracking-tight leading-none mb-1 text-emerald-400">11 ENERO</div> <div class="text-[10px] text-slate-400 uppercase tracking-widest font-black">DOMINGO 2026 - ÚLTIMOS CUPOS</div> </div> </div> <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex items-center gap-5 hover:bg-emerald-500/10 transition-all cursor-default"> <i data-lucide="calendar" class="text-emerald-400" size="32"></i> <div> <div class="font-black text-2xl tracking-tight leading-none mb-1">01 FEBRERO</div> <div class="text-[10px] text-slate-400 uppercase tracking-widest font-black">DOMINGO 2026 - DISPONIBLE</div> </div> </div> </div> <div class="mb-16"> <div class="text-7xl md:text-8xl font-black mb-6 tracking-tighter leading-none">$290.000 <span class="text-xl text-slate-500 font-normal uppercase tracking-[0.3em]">COP</span></div> <div class="flex flex-col items-center gap-4"> <p class="text-emerald-400 font-black uppercase tracking-[0.2em] text-sm bg-emerald-500/10 inline-block px-8 py-3 rounded-full border border-emerald-500/30 shadow-lg shadow-emerald-500/10"> Reserva con solo $60.000 por persona </p> </div> </div> <a href="https://checkout.nequi.wompi.co/l/bEXEBu" target="_blank" onclick="openModal()" class="block w-full py-8 bg-emerald-500 text-slate-950 rounded-3xl text-3xl font-black shadow-2xl hover:bg-emerald-400 transition-all transform hover:-translate-y-2 uppercase tracking-tighter">RESERVAR POR NEQUI</a> <p class="mt-8 text-slate-500 text-xs font-bold uppercase tracking-widest italic">Punto de encuentro: Barranquilla</p> <div class="mt-6 pt-6 border-t border-white/10"> <p class="text-slate-500 text-xs">¿Necesitas cancelar? Escríbenos por <a href="https://wa.me/573209344964?text=Hola!%20Necesito%20cancelar%20mi%20reserva%20de%20Minca%20Mágica" target="_blank" class="text-emerald-400 hover:text-emerald-300 underline">WhatsApp</a></p> </div> </div> </div> </section> <!-- Modal WhatsApp --> <div id="modal-whatsapp" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm"> <div class="bg-slate-900 rounded-3xl p-8 md:p-12 max-w-md w-full text-center border border-emerald-500/30 shadow-2xl"> <div class="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6"> <i data-lucide="check" class="text-white" size="32"></i> </div> <h3 class="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight">¡CASI LISTO!</h3> <p class="text-slate-300 mb-6">Una vez realizado el pago, envíanos el comprobante por WhatsApp para confirmar tu reserva.</p> <p class="text-slate-400 text-sm mb-6">¿Tienes otro método de pago? Escríbenos por WhatsApp</p> <a href="https://wa.me/573209344964?text=Hola!%20Acabo%20de%20realizar%20mi%20pago%20para%20Minca%20Mágica" target="_blank" class="block w-full py-5 bg-emerald-500 text-slate-950 rounded-2xl text-xl font-black hover:bg-emerald-400 transition-all mb-3"> <span class="flex items-center justify-center gap-3"><i data-lucide="message-circle" size="24"></i> ENVIAR COMPROBANTE</span> </a> <a href="https://wa.me/573209344964?text=Hola!%20Necesito%20ayuda%20con%20mi%20reserva%20de%20Minca%20Mágica" target="_blank" class="block w-full py-4 bg-white/10 text-white rounded-2xl text-base font-bold hover:bg-white/20 transition-all mb-3"> <span class="flex items-center justify-center gap-2"><i data-lucide="help-circle" size="20"></i> NECESITO AYUDA</span> </a> <button onclick="clearAndClose()" class="w-full py-4 bg-slate-800 text-slate-400 rounded-2xl text-sm font-bold hover:bg-slate-700 hover:text-white transition-all mb-2"> Aún no he hecho mi pago </button> <button onclick="closeModal()" class="text-slate-600 text-xs font-bold hover:text-white transition-all mt-2">Cerrar</button> </div> </div> <!-- Footer --> <footer class="py-24 bg-slate-950 text-white px-6 border-t border-white/5"> <div class="max-w-7xl mx-auto flex flex-col items-center text-center"> <div class="mb-16"> <img src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" alt="Logo Luisito el Viajero" class="h-32 md:h-40 w-auto brightness-0 invert opacity-90" > </div> <a href="https://instagram.com/luisitoelviajero" target="_blank" class="flex items-center gap-4 text-emerald-400 text-4xl font-black transition-all hover:scale-110 tracking-tighter"> <i data-lucide="instagram" style="width: 48px; height: 48px;"></i> @luisitoelviajero </a> <div class="w-full pt-16 border-t border-white/5 mt-16 text-[10px] font-black text-slate-700 uppercase tracking-[0.6em]"> © 2026 LUISITO EL VIAJERO • SALIDAS DESDE BARRANQUILLA • SIERRA NEVADA </div> </div> </footer> <script> lucide.createIcons(); const navbar = document.getElementById('navbar'); const logo = document.getElementById('logo'); const navCta = document.getElementById('nav-cta'); const modal = document.getElementById('modal-whatsapp'); window.addEventListener('scroll', () => { if (window.scrollY > 80) { navbar.classList.add('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3'); navbar.classList.remove('py-6'); logo.classList.remove('brightness-0', 'invert'); navCta.classList.add('bg-emerald-600', 'text-white'); navCta.classList.remove('bg-white', 'text-emerald-900'); } else { navbar.classList.remove('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3'); navbar.classList.add('py-6'); logo.classList.add('brightness-0', 'invert'); navCta.classList.remove('bg-emerald-600', 'text-white'); navCta.classList.add('bg-white', 'text-emerald-900'); } }); function openModal() { localStorage.setItem('nequi_clicked', Date.now()); setTimeout(() => { modal.classList.remove('hidden'); modal.classList.add('flex'); lucide.createIcons(); }, 500); } function closeModal() { modal.classList.add('hidden'); modal.classList.remove('flex'); } function clearAndClose() { localStorage.removeItem('nequi_clicked'); closeModal(); } modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); }); </script> </body> </html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minca Mágica | Luisito el Viajero</title> <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        @keyframes zoom-slow {
+            from {
+                transform: scal
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        .hero-zoom {
+            animation: zoom-slow 20s linear infinite alternate;
+        }
+
+        .premium-logo-glow:hover {
+            filter: drop-shadow(0 0 15px rgba(52, 211, 153, 0.8));
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden"> <!-- Top Bar Premium -->
+    <div class="fixed w-full z-[60] bg-emerald-950 text-white py-2 px-6 overflow-hidden border-b border-emerald-800/50">
+        <div class="max-w-7xl mx-auto flex justify-center items-center gap-3 text-center"> <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <p class="text-[10px] md:text-xs font-black tracking-[0.3em] uppercase"> Experiencias exclusivas saliendo desde <span class="text-emerald-400">Barranquilla</span> </p> <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        </div>
+    </div> <!-- Navegación -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 pt-14 pb-6 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center"> <a href="#"> <img id="logo" src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" alt="Logo Luisito el Viajero" class="h-16 md:h-20 w-auto transition-all duration-500 premium-logo-glow object-contain brightness-0 invert"> </a> </div>
+            <div class="flex items-center gap-8"> <a href="https://instagram.com/luisitoelviajero" target="_blank" class="nav-link hidden md:flex items-center gap-2 font-bold transition-all text-white/90 hover:text-white"> <i data-lucide="instagram" size="20"></i> <span>@luisitoelviajero</span> </a> <a href="#reserva" id="nav-cta" class="px-8 py-3 rounded-2xl font-black tracking-tighter shadow-2xl transition-all transform hover:scale-105 bg-white text-emerald-900 text-sm md:text-base"> RESERVAR AHORA </a> </div>
+        </div>
+    </nav> <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0"> <img src="Donde-queda-Minca-en-Santa-Marta 2.jpg" alt="Portada Minca" class="w-full h-full object-cover hero-zoom" onerror="this.src='https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2070&auto=format&fit=crop'">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-slate-50"></div>
+        </div>
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
+            <div class="inline-flex items-center gap-3 px-5 py-2 mb-8 rounded-full bg-black/40 backdrop-blur-md border border-white/20"> <i data-lucide="map-pin" size="14" class="text-emerald-400"></i> <span class="text-white font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs"> Salidas directas desde Barranquilla </span> </div>
+            <h1 class="text-7xl md:text-[10rem] font-black mb-8 tracking-tighter leading-[0.85] drop-shadow-2xl"> MINCA <br /> <span class="text-emerald-400 italic">MÁGICA</span> </h1>
+            <p class="text-2xl md:text-3xl mb-12 text-slate-100 font-light max-w-3xl mx-auto drop-shadow-lg leading-tight"> El escape que tu alma estaba pidiendo. Reconecta con la Sierra Nevada saliendo desde Barranquilla. </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center"> <a href="#reserva" class="px-14 py-7 bg-emerald-500 hover:bg-emerald-400 text-white rounded-3xl text-2xl font-black shadow-2xl shadow-emerald-500/50 transition-all transform hover:-translate-y-2"> ¡RESERVAR MI CUPO! </a> </div>
+        </div>
+    </section> <!-- Sección de Viajes Grupales (Editada) -->
+    <section class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-emerald-600 tracking-widest uppercase mb-4">Comunidad de Viajeros</h2>
+                <h3 class="text-5xl md:text-6xl font-black tracking-tighter uppercase">Nuestros <span class="text-emerald-500 italic">Viajes Grupales</span></h3>
+                <p class="mt-6 text-slate-500 max-w-2xl mx-auto text-lg italic uppercase tracking-wider">Únete a la familia de Luisito el Viajero</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <!-- Foto 1 -->
+                <div class="overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all"> <img src="IMG_2941.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 5"> </div> <!-- Foto 2 -->
+                <div class="overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all md:translate-y-8"> <img src="IMG_2942.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 6"> </div> <!-- Foto 3 -->
+                <div class="overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all"> <img src="IMG_2943.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 7"> </div>
+            </div>
+        </div>
+    </section> <!-- EL PLAN INCLUYE - Detalle Exacto -->
+    <section class="py-24 bg-slate-100 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-sm font-bold text-emerald-600 tracking-[0.3em] uppercase text-center mb-4">Todo lo que vivirás</h2>
+            <h3 class="text-5xl md:text-6xl font-black text-center mb-16 tracking-tighter uppercase">EL PLAN <span class="text-emerald-500 italic">INCLUYE</span></h3>
+            <div class="grid lg:grid-cols-3 gap-8"> <!-- City Tour -->
+                <div class="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 hover:shadow-2xl transition-all">
+                    <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mb-8"> <i data-lucide="coffee" class="text-amber-600" size="32"></i> </div>
+                    <h4 class="text-2xl font-black mb-6 uppercase tracking-tighter">City Tour Minca</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-slate-600"> <i data-lucide="check-circle" class="text-emerald-500 shrink-0 mt-1" size="18"></i> <span>Degustación de café orgánico</span> </li>
+                        <li class="flex items-start gap-3 text-slate-600"> <i data-lucide="check-circle" class="text-emerald-500 shrink-0 mt-1" size="18"></i> <span>Famoso pan de chocolate</span> </li>
+                    </ul>
+                </div> <!-- Pasadía Sierra Minca -->
+                <div class="bg-emerald-900 p-10 rounded-[3rem] shadow-2xl text-white transform lg:-translate-y-6">
+                    <div class="w-16 h-16 bg-emerald-800 rounded-2xl flex items-center justify-center mb-8"> <i data-lucide="mountain" class="text-emerald-400" size="32"></i> </div>
+                    <h4 class="text-2xl font-black mb-6 uppercase tracking-tighter">Pasadía Sierra Minca</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-emerald-100 font-bold"> <i data-lucide="utensils" class="text-emerald-400 shrink-0 mt-1" size="18"></i> <span>Almuerzo a la carta</span> </li>
+                        <li class="flex items-start gap-3 text-emerald-100"> <i data-lucide="waves" class="text-emerald-400 shrink-0 mt-1" size="18"></i> <span>Acceso a piscinas</span> </li>
+                        <li class="flex items-start gap-3 text-emerald-100"> <i data-lucide="layout" class="text-emerald-400 shrink-0 mt-1" size="18"></i> <span>Mallas, hamacas y miradores</span> </li>
+                        <li class="flex items-start gap-3 text-emerald-100"> <i data-lucide="smile" class="text-emerald-400 shrink-0 mt-1" size="18"></i> <span>Zona de descanso y juegos</span> </li>
+                    </ul>
+                </div> <!-- Sierra Wonders & Transporte -->
+                <div class="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 hover:shadow-2xl transition-all">
+                    <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center mb-8"> <i data-lucide="bird" class="text-indigo-600" size="32"></i> </div>
+                    <h4 class="text-2xl font-black mb-6 uppercase tracking-tighter">Wonders & Logística</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-slate-600"> <i data-lucide="check-circle" class="text-emerald-500 shrink-0 mt-1" size="18"></i> <span>Visita Sierra Wonders (Colibríes)</span> </li>
+                        <li class="flex items-start gap-3 text-slate-600 font-bold"> <i data-lucide="truck" class="text-emerald-500 shrink-0 mt-1" size="18"></i> <span>Transporte interno en 4x4</span> </li>
+                        <li class="flex items-start gap-3 text-emerald-600 font-black"> <i data-lucide="bus" class="shrink-0 mt-1" size="18"></i> <span>Ida y regreso desde Barranquilla</span> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section> <!-- Reserva y Fechas -->
+    <section id="reserva" class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bg-slate-900 rounded-[4rem] p-12 md:p-24 text-white shadow-3xl border border-white/5">
+                <h2 class="text-5xl font-black mb-12 tracking-tighter uppercase italic">ASEGURA TU CUPO</h2>
+                <div class="grid md:grid-cols-2 gap-8 mb-16 text-left">
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex items-center gap-5 hover:bg-emerald-500/10 transition-all cursor-default"> <i data-lucide="calendar" class="text-emerald-400" size="32"></i>
+                        <div>
+                            <div class="font-black text-2xl tracking-tight leading-none mb-1 text-emerald-400">11 ENERO</div>
+                            <div class="text-[10px] text-slate-400 uppercase tracking-widest font-black">DOMINGO 2026 - ÚLTIMOS CUPOS</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex items-center gap-5 hover:bg-emerald-500/10 transition-all cursor-default"> <i data-lucide="calendar" class="text-emerald-400" size="32"></i>
+                        <div>
+                            <div class="font-black text-2xl tracking-tight leading-none mb-1">01 FEBRERO</div>
+                            <div class="text-[10px] text-slate-400 uppercase tracking-widest font-black">DOMINGO 2026 - DISPONIBLE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-16">
+                    <div class="text-7xl md:text-8xl font-black mb-6 tracking-tighter leading-none">$290.000 <span class="text-xl text-slate-500 font-normal uppercase tracking-[0.3em]">COP</span></div>
+                    <div class="flex flex-col items-center gap-4">
+                        <p class="text-emerald-400 font-black uppercase tracking-[0.2em] text-sm bg-emerald-500/10 inline-block px-8 py-3 rounded-full border border-emerald-500/30 shadow-lg shadow-emerald-500/10"> Reserva con solo $60.000 por persona </p>
+                    </div>
+                </div> <a href="https://checkout.nequi.wompi.co/l/bEXEBu" target="_blank" onclick="openModal()" class="block w-full py-8 bg-emerald-500 text-slate-950 rounded-3xl text-3xl font-black shadow-2xl hover:bg-emerald-400 transition-all transform hover:-translate-y-2 uppercase tracking-tighter">RESERVAR POR NEQUI</a>
+                <p class="mt-8 text-slate-500 text-xs font-bold uppercase tracking-widest italic">Punto de encuentro: Barranquilla</p>
+                <div class="mt-6 pt-6 border-t border-white/10">
+                    <p class="text-slate-500 text-xs">¿Necesitas cancelar? Escríbenos por <a href="https://wa.me/573209344964?text=Hola!%20Necesito%20cancelar%20mi%20reserva%20de%20Minca%20Mágica" target="_blank" class="text-emerald-400 hover:text-emerald-300 underline">WhatsApp</a></p>
+                </div>
+            </div>
+        </div>
+    </section> <!-- Modal WhatsApp -->
+    <div id="modal-whatsapp" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="bg-slate-900 rounded-3xl p-8 md:p-12 max-w-md w-full text-center border border-emerald-500/30 shadow-2xl">
+            <div class="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6"> <i data-lucide="check" class="text-white" size="32"></i> </div>
+            <h3 class="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight">¡CASI LISTO!</h3>
+            <p class="text-slate-300 mb-6">Una vez realizado el pago, envíanos el comprobante por WhatsApp para confirmar tu reserva.</p>
+            <p class="text-slate-400 text-sm mb-6">¿Tienes otro método de pago? Escríbenos por WhatsApp</p> <a href="https://wa.me/573209344964?text=Hola!%20Acabo%20de%20realizar%20mi%20pago%20para%20Minca%20Mágica" target="_blank" class="block w-full py-5 bg-emerald-500 text-slate-950 rounded-2xl text-xl font-black hover:bg-emerald-400 transition-all mb-3"> <span class="flex items-center justify-center gap-3"><i data-lucide="message-circle" size="24"></i> ENVIAR COMPROBANTE</span> </a> <a href="https://wa.me/573209344964?text=Hola!%20Necesito%20ayuda%20con%20mi%20reserva%20de%20Minca%20Mágica" target="_blank" class="block w-full py-4 bg-white/10 text-white rounded-2xl text-base font-bold hover:bg-white/20 transition-all mb-3"> <span class="flex items-center justify-center gap-2"><i data-lucide="help-circle" size="20"></i> NECESITO AYUDA</span> </a> <button onclick="clearAndClose()" class="w-full py-4 bg-slate-800 text-slate-400 rounded-2xl text-sm font-bold hover:bg-slate-700 hover:text-white transition-all mb-2"> Aún no he hecho mi pago </button> <button onclick="closeModal()" class="text-slate-600 text-xs font-bold hover:text-white transition-all mt-2">Cerrar</button>
+        </div>
+    </div> <!-- Footer -->
+    <footer class="py-24 bg-slate-950 text-white px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            <div class="mb-16"> <img src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" alt="Logo Luisito el Viajero" class="h-32 md:h-40 w-auto brightness-0 invert opacity-90"> </div> <a href="https://instagram.com/luisitoelviajero" target="_blank" class="flex items-center gap-4 text-emerald-400 text-4xl font-black transition-all hover:scale-110 tracking-tighter"> <i data-lucide="instagram" style="width: 48px; height: 48px;"></i> @luisitoelviajero </a>
+            <div class="w-full pt-16 border-t border-white/5 mt-16 text-[10px] font-black text-slate-700 uppercase tracking-[0.6em]"> © 2026 LUISITO EL VIAJERO • SALIDAS DESDE BARRANQUILLA • SIERRA NEVADA </div>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+        const navbar = document.getElementById('navbar');
+        const logo = document.getElementById('logo');
+        const navCta = document.getElementById('nav-cta');
+        const modal = document.getElementById('modal-whatsapp');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3');
+                navbar.classList.remove('py-6');
+                logo.classList.remove('brightness-0', 'invert');
+                navCta.classList.add('bg-emerald-600', 'text-white');
+                navCta.classList.remove('bg-white', 'text-emerald-900');
+            } else {
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3');
+                navbar.classList.add('py-6');
+                logo.classList.add('brightness-0', 'invert');
+                navCta.classList.remove('bg-emerald-600', 'text-white');
+                navCta.classList.add('bg-white', 'text-emerald-900');
+            }
+        });
+
+        function openModal() {
+            localStorage.setItem('nequi_clicked', Date.now());
+            setTimeout(() => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                lucide.createIcons();
+            }, 500);
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function clearAndClose() {
+            localStorage.removeItem('nequi_clicked');
+            closeModal();
+        }
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    </script>
+</body>
+
+</html>
