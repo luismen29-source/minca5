@@ -43,7 +43,7 @@
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 pt-14 pb-6 px-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center"> <a href="#"> <img id="logo" src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" alt="Logo Luisito el Viajero" class="h-16 md:h-20 w-auto transition-all duration-500 premium-logo-glow object-contain brightness-0 invert"> </a> </div>
-            <div class="flex items-center gap-8"> <a href="https://instagram.com/luisitoelviajero" target="_blank" class="nav-link hidden md:flex items-center gap-2 font-bold transition-all text-white/90 hover:text-white"> <i data-lucide="instagram" size="20"></i> <span>@luisitoelviajero</span> </a> <a href="#reserva" id="nav-cta" class="px-8 py-3 rounded-2xl font-black tracking-tighter shadow-2xl transition-all transform hover:scale-105 bg-white text-emerald-900 text-sm md:text-base"> RESERVAR AHORA </a> </div>
+            <div class="flex items-center gap-8"> <a href="https://instagram.com/luisitoelviajero" target="_blank" class="nav-link hidden md:flex items-center gap-2 font-bold transition-all text-white/90 hover:text-white"> <i data-lucide="instagram" size="20"></i> <span>@luisitoelviajero</span> </a> <a href="#registro" id="nav-cta" class="px-8 py-3 rounded-2xl font-black tracking-tighter shadow-2xl transition-all transform hover:scale-105 bg-white text-emerald-900 text-sm md:text-base"> RESERVAR AHORA </a> </div>
         </div>
     </nav> <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
@@ -144,7 +144,39 @@
             <p class="text-slate-300 mb-6">Una vez realizado el pago, envíanos el comprobante por WhatsApp para confirmar tu reserva.</p>
             <p class="text-slate-400 text-sm mb-6">¿Tienes otro método de pago? Escríbenos por WhatsApp</p> <a href="https://wa.me/573209344964?text=Hola!%20Acabo%20de%20realizar%20mi%20pago%20para%20Minca%20Mágica" target="_blank" class="block w-full py-5 bg-emerald-500 text-slate-950 rounded-2xl text-xl font-black hover:bg-emerald-400 transition-all mb-3"> <span class="flex items-center justify-center gap-3"><i data-lucide="message-circle" size="24"></i> ENVIAR COMPROBANTE</span> </a> <a href="https://wa.me/573209344964?text=Hola!%20Necesito%20ayuda%20con%20mi%20reserva%20de%20Minca%20Mágica" target="_blank" class="block w-full py-4 bg-white/10 text-white rounded-2xl text-base font-bold hover:bg-white/20 transition-all mb-3"> <span class="flex items-center justify-center gap-2"><i data-lucide="help-circle" size="20"></i> NECESITO AYUDA</span> </a> <button onclick="clearAndClose()" class="w-full py-4 bg-slate-800 text-slate-400 rounded-2xl text-sm font-bold hover:bg-slate-700 hover:text-white transition-all mb-2"> Aún no he hecho mi pago </button> <button onclick="closeModal()" class="text-slate-600 text-xs font-bold hover:text-white transition-all mt-2">Cerrar</button>
         </div>
-    </div> <!-- Footer -->
+    </div> 
+    <section id="registro" class="py-24 bg-slate-50 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-sm font-bold text-emerald-600 tracking-[0.3em] uppercase mb-4">Paso Final</h2>
+            <h3 class="text-5xl md:text-6xl font-black tracking-tighter uppercase">REGÍSTRATE A LA <span class="text-emerald-500 italic">AVENTURA</span></h3>
+            <p class="mt-4 text-slate-500 font-medium">Completa tus datos para oficializar tu cupo en nuestra próxima salida.</p>
+        </div>
+
+        <div class="bg-white rounded-[3rem] shadow-2xl border border-slate-200 overflow-hidden p-2 md:p-8">
+            <div class="relative w-full overflow-hidden" style="padding-top: 100%;"> <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSc0KppvQ4OBLCjhvb6ut0eTon7kYYH52YpuBBi8Ium35bc1qQ/viewform?embedded=true" 
+                    class="absolute top-0 left-0 w-full h-full border-0"
+                    allowfullscreen>
+                    Cargando…
+                </iframe>
+            </div>
+            
+            <div class="mt-8 p-6 bg-slate-50 rounded-3xl border border-dashed border-slate-300">
+                <label class="flex items-start gap-3 cursor-pointer group">
+                    <input type="checkbox" required class="mt-1 w-5 h-5 border-2 border-emerald-500 rounded text-emerald-500 focus:ring-emerald-500">
+                    <span class="text-xs md:text-sm text-slate-600 leading-tight">
+                        Acepto el <strong>Tratamiento de Datos Personales</strong>. Entiendo que mi información será utilizada exclusivamente para la logística del viaje a Minca y recibir actualizaciones de Luisito el Viajero según la Ley 1581 de 2012.
+                    </span>
+                </label>
+            </div>
+        </div>
+        
+        <p class="text-center mt-8 text-slate-400 text-[10px] uppercase font-bold tracking-widest">
+            Tu información está protegida con seguridad de grado bancario
+        </p>
+    </div>
+</section><!-- Footer -->
     <footer class="py-24 bg-slate-950 text-white px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
             <div class="mb-16"> <img src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" alt="Logo Luisito el Viajero" class="h-32 md:h-40 w-auto brightness-0 invert opacity-90"> </div> <a href="https://instagram.com/luisitoelviajero" target="_blank" class="flex items-center gap-4 text-emerald-400 text-4xl font-black transition-all hover:scale-110 tracking-tighter"> <i data-lucide="instagram" style="width: 48px; height: 48px;"></i> @luisitoelviajero </a>
