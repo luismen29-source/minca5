@@ -9,28 +9,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
         
-        body { font-family: 'Inter', sans-serif; }
-
-        /* Animación de entrada para las fotos */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .reveal { animation: fadeInUp 1s ease-out forwards; }
-
-        /* Efecto de flotación continua */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .img-float { animation: float 6s ease-in-out infinite; }
-        .img-float-delay { animation: float 6s ease-in-out infinite 2s; }
-
-        .hero-zoom {
-            animation: zoom-slow 20s linear infinite alternate;
+        body {
+            font-family: 'Inter', sans-serif;
         }
 
         @keyframes zoom-slow {
@@ -38,12 +18,19 @@
             to { transform: scale(1.1); }
         }
 
-        /* Quitar espacios en la grilla */
-        .grid-compact {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-auto-rows: 300px;
-            gap: 0; /* Sin espacios */
+        .hero-zoom {
+            animation: zoom-slow 20s linear infinite alternate;
+        }
+
+        .premium-logo-glow:hover {
+            filter: drop-shadow(0 0 15px rgba(52, 211, 153, 0.8));
+            transform: scale(1.05);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
     </style>
 </head>
@@ -53,113 +40,230 @@
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center">
                 <a href="#">
-                    <img id="logo" src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" alt="Logo" class="h-20 md:h-24 w-auto transition-all duration-500 premium-logo-glow brightness-0 invert">
+                    <img 
+                        id="logo"
+                        src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" 
+                        alt="Logo Luisito el Viajero" 
+                        class="h-20 md:h-24 w-auto transition-all duration-500 premium-logo-glow object-contain brightness-0 invert"
+                    >
                 </a>
             </div>
+
             <div class="flex items-center gap-8">
-                <a href="#reserva" id="nav-cta" class="px-8 py-3 rounded-xl font-black transition-all transform hover:scale-105 bg-white text-emerald-900">RESERVAR</a>
+                <a 
+                    href="https://instagram.com/luisitoelviajero"
+                    target="_blank"
+                    class="nav-link hidden md:flex items-center gap-2 font-bold transition-all text-white/90 hover:text-white"
+                >
+                    <i data-lucide="instagram" size="22"></i>
+                    <span>@luisitoelviajero</span>
+                </a>
+                <a 
+                    href="#reserva" 
+                    id="nav-cta"
+                    class="px-10 py-4 rounded-2xl font-black tracking-tighter shadow-2xl transition-all transform hover:scale-105 bg-white text-emerald-900 text-lg"
+                >
+                    RESERVAR AHORA
+                </a>
             </div>
         </div>
     </nav>
 
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="Donde-queda-Minca-en-Santa-Marta 2.jpg" class="w-full h-full object-cover hero-zoom">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-white"></div>
-        </div>
-        <div class="relative z-10 text-center text-white px-6">
-            <h1 class="text-6xl md:text-9xl font-black tracking-tighter leading-none mb-6">MINCA <span class="text-emerald-400">MÁGICA</span></h1>
-            <p class="text-xl md:text-3xl font-light mb-10">La Sierra Nevada te espera. Grupo exclusivo 2026.</p>
-            <a href="#reserva" class="px-12 py-6 bg-emerald-500 hover:bg-emerald-400 rounded-2xl text-xl font-black transition-all inline-block shadow-2xl">¡RESERVAR MI LUGAR!</a>
-        </div>
-    </section>
-
-    <section class="bg-white overflow-hidden">
-        <div class="text-center py-16 px-6">
-            <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase italic">Nuestra <span class="text-emerald-500">Comunidad</span></h2>
+            <img 
+                src="Donde-queda-Minca-en-Santa-Marta 2.jpg" 
+                alt="Sierra Nevada Minca Paisaje" 
+                class="w-full h-full object-cover hero-zoom"
+            >
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-slate-50"></div>
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
-            <div class="relative overflow-hidden group h-80 reveal">
-                <img src="584dced6ee7a1e70dfc25048cdf804f4.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Viaje">
-            </div>
-            <div class="relative overflow-hidden group h-80 reveal">
-                <img src="IMG_0388.HEIC" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Viaje">
-            </div>
-            <div class="relative overflow-hidden group h-80 reveal">
-                <img src="IMG_0554.heic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Viaje">
-            </div>
-            <div class="relative overflow-hidden group h-80 reveal">
-                <img src="IMG_0913.heic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Viaje">
-            </div>
-            <div class="relative overflow-hidden group h-80 reveal">
-                <img src="Imagen_2941.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Viaje">
-            </div>
-            <div class="relative overflow-hidden group h-80 reveal">
-                <img src="Imagen_2942.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Viaje">
-            </div>
-            <div class="relative overflow-hidden group h-80 reveal">
-                <img src="Imagen_2943.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Viaje">
-            </div>
-            <div class="relative overflow-hidden group h-80 reveal">
-                <img src="584dced6ee7a1e70dfc25048cdf804f4.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Viaje">
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
+            <span class="inline-block px-5 py-2 mb-8 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/30 text-emerald-300 font-bold tracking-[0.2em] uppercase text-xs animate-pulse">
+                EXPERIENCIAS EXCLUSIVAS 2026
+            </span>
+            <h1 class="text-7xl md:text-[10rem] font-black mb-8 tracking-tighter leading-[0.85] drop-shadow-2xl">
+                MINCA <br />
+                <span class="text-emerald-400 italic">MÁGICA</span>
+            </h1>
+            <p class="text-2xl md:text-4xl mb-12 text-slate-100 font-light max-w-3xl mx-auto drop-shadow-lg leading-tight">
+                Reconecta con la Sierra Nevada. Desconéctate del caos y vuelve a sentirte vivo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a 
+                    href="#reserva"
+                    class="px-14 py-7 bg-emerald-500 hover:bg-emerald-400 text-white rounded-3xl text-2xl font-black shadow-2xl shadow-emerald-500/50 transition-all transform hover:-translate-y-2"
+                >
+                    ¡QUIERO MI CUPO!
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-slate-50">
+    <section class="py-24 bg-white px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-10 rounded-[3rem] shadow-xl reveal img-float">
-                    <p class="text-lg italic text-slate-600 mb-8">"Luisito te hace sentir en familia desde el minuto uno. ¡Las fotos quedaron increíbles!"</p>
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-emerald-600 tracking-widest uppercase mb-4">Comunidad de Viajeros</h2>
+                <h3 class="text-5xl md:text-6xl font-black tracking-tighter uppercase">Nuestros <span class="text-emerald-500 italic">Viajes Grupales</span></h3>
+                <p class="mt-6 text-slate-500 max-w-2xl mx-auto text-lg">Únete a un grupo de personas con tu misma vibra. No necesitas venir acompañado, aquí harás nuevos amigos.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="space-y-4 md:space-y-6">
+                    <img src="584dced6ee7a1e70dfc25048cdf804f4.jpg" class="w-full aspect-[3/4] object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Minca Experiencia">
+                    <img src="IMG_0388.HEIC" class="w-full aspect-square object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Minca Grupo">
+                </div>
+                <div class="pt-12 space-y-4 md:space-y-6">
+                    <img src="IMG_0554.heic" class="w-full aspect-square object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Minca Amigos">
+                    <img src="IMG_0913.heic" class="w-full aspect-[3/4] object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Senderismo Minca">
+                </div>
+                <div class="space-y-4 md:space-y-6">
+                    <img src="Imagen_2941.jpg" class="w-full aspect-[3/4] object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Cascadas">
+                    <img src="Imagen_2942.jpg" class="w-full aspect-square object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Mirador">
+                </div>
+                <div class="pt-12 space-y-4 md:space-y-6">
+                    <img src="Imagen_2943.jpg" class="w-full aspect-square object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Equipo Luisito">
+                    <img src="584dced6ee7a1e70dfc25048cdf804f4.jpg" class="w-full aspect-[3/4] object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Atardecer Sierra">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-black mb-16 tracking-tighter text-center uppercase">Voces de la <span class="text-emerald-600">Experiencia</span></h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                    <p class="text-slate-600 italic mb-6">"Vine sola desde Bogotá y fue lo mejor. Luisito te hace sentir en familia desde el minuto uno. ¡Las fotos quedaron increíbles!"</p>
                     <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/150?u=maria_traveler&gender=female" class="w-16 h-16 rounded-full border-4 border-emerald-400 shadow-lg" alt="María">
-                        <div><div class="font-black text-xl">María G.</div><div class="text-emerald-500">Bogotá</div></div>
+                        <img src="https://i.pravatar.cc/150?u=maria_traveler&gender=female" class="w-12 h-12 rounded-full border-2 border-emerald-500 object-cover" alt="María">
+                        <div><div class="font-black text-slate-900">María G.</div><div class="text-xs text-slate-400">Bogotá</div></div>
                     </div>
                 </div>
-                <div class="bg-white p-10 rounded-[3rem] shadow-xl reveal img-float-delay">
-                    <p class="text-lg italic text-slate-600 mb-8">"Minca es mágica, pero ir con alguien que conoce los spots secretos lo hace 100 veces mejor."</p>
+
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                    <p class="text-slate-600 italic mb-6">"La organización es impecable. Los carros 4x4 son súper cómodos y el almuerzo en Sierra Minca fue de otro mundo."</p>
                     <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/150?u=andres_viajero&gender=male" class="w-16 h-16 rounded-full border-4 border-emerald-400 shadow-lg" alt="Andrés">
-                        <div><div class="font-black text-xl">Andrés S.</div><div class="text-emerald-500">Barranquilla</div></div>
+                        <img src="https://i.pravatar.cc/150?u=juan" class="w-12 h-12 rounded-full border-2 border-emerald-500" alt="Avatar">
+                        <div><div class="font-black text-slate-900">Juan Pablo R.</div><div class="text-xs text-slate-400">Medellín</div></div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                    <p class="text-slate-600 italic mb-6">"Es una desconexión real. No te tienes que preocupar por nada, solo por disfrutar. ¡Ya quiero repetir en Febrero!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/150?u=caro" class="w-12 h-12 rounded-full border-2 border-emerald-500" alt="Avatar">
+                        <div><div class="font-black text-slate-900">Carolina M.</div><div class="text-xs text-slate-400">Cali</div></div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                    <p class="text-slate-600 italic mb-6">"Minca es mágica, pero ir con alguien que conoce los spots secretos lo hace 100 veces mejor. ¡Gracias Luis!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/150?u=andres_viajero&gender=male" class="w-12 h-12 rounded-full border-2 border-emerald-500 object-cover" alt="Andrés">
+                        <div><div class="font-black text-slate-900">Andrés S.</div><div class="text-xs text-slate-400">Barranquilla</div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 bg-emerald-950 text-white text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <img src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" class="h-20 mx-auto mb-6 brightness-0 invert opacity-50">
-            <p class="uppercase font-black tracking-widest text-xs">© 2026 Luisito el Viajero - Sierra Nevada</p>
+    <section class="py-24 bg-emerald-900 text-white text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter italic">LO QUE INCLUYE</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center">
+                    <i data-lucide="bus" class="text-emerald-400 mb-4" size="40"></i>
+                    <span class="font-black uppercase text-xs">Transporte VIP</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-lucide="utensils" class="text-emerald-400 mb-4" size="40"></i>
+                    <span class="font-black uppercase text-xs">Almuerzo Gourmet</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-lucide="camera" class="text-emerald-400 mb-4" size="40"></i>
+                    <span class="font-black uppercase text-xs">Fotos & Videos</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-lucide="ticket" class="text-emerald-400 mb-4" size="40"></i>
+                    <span class="font-black uppercase text-xs">Entradas Full</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reserva" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bg-slate-900 rounded-[4rem] p-12 md:p-24 text-white shadow-3xl border border-white/5">
+                <h2 class="text-5xl font-black mb-12 tracking-tighter uppercase italic">PRÓXIMAS SALIDAS</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-16 text-left">
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex items-center gap-5 hover:bg-white/10 transition-all cursor-default">
+                        <i data-lucide="calendar" class="text-emerald-400" size="32"></i>
+                        <div>
+                            <div class="font-black text-2xl tracking-tight leading-none mb-1">11 ENERO</div>
+                            <div class="text-xs text-emerald-500 uppercase tracking-widest font-black">DOMINGO 2026 - ÚLTIMOS CUPOS</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex items-center gap-5 hover:bg-white/10 transition-all cursor-default">
+                        <i data-lucide="calendar" class="text-emerald-400" size="32"></i>
+                        <div>
+                            <div class="font-black text-2xl tracking-tight leading-none mb-1">01 FEBRERO</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-widest font-black">DOMINGO 2026 - DISPONIBLE</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <div class="text-7xl md:text-8xl font-black mb-4 tracking-tighter leading-none">$290.000 <span class="text-xl text-slate-500 font-normal uppercase tracking-[0.3em]">COP</span></div>
+                    <p class="text-emerald-400 font-black uppercase tracking-[0.2em] text-sm bg-emerald-500/10 inline-block px-6 py-2 rounded-full border border-emerald-500/30">Reserva con solo $60.000</p>
+                </div>
+
+                <a href="https://checkout.nequi.wompi.co/l/bEXEBu" class="block w-full py-8 bg-emerald-500 text-slate-950 rounded-3xl text-3xl font-black shadow-2xl hover:bg-emerald-400 transition-all transform hover:-translate-y-2 uppercase tracking-tighter">RESERVAR MI CUPO</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-24 bg-slate-950 text-white px-6">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            <div class="mb-16">
+                <img 
+                    src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" 
+                    alt="Logo Luisito el Viajero" 
+                    class="h-32 md:h-40 w-auto brightness-0 invert opacity-90"
+                >
+            </div>
+            <a href="https://instagram.com/luisitoelviajero" target="_blank" class="flex items-center gap-4 text-emerald-400 text-4xl font-black transition-all hover:scale-110 tracking-tighter">
+                <i data-lucide="instagram" style="width: 48px; height: 48px;"></i> @luisitoelviajero
+            </a>
+            <div class="w-full pt-16 border-t border-white/5 mt-16 text-xs font-black text-slate-700 uppercase tracking-[0.6em]">
+                © 2026 LUISITO EL VIAJERO • SIERRA NEVADA DE SANTA MARTA
+            </div>
         </div>
     </footer>
 
     <script>
         lucide.createIcons();
-        
-        // Scroll reveal logic
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal');
-                }
-            });
-        }, observerOptions);
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        const navbar = document.getElementById('navbar');
+        const logo = document.getElementById('logo');
+        const navCta = document.getElementById('nav-cta');
 
-        // Navbar Change
         window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            const logo = document.getElementById('logo');
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-white/90', 'backdrop-blur-md', 'py-4', 'shadow-xl');
+            if (window.scrollY > 80) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3');
+                navbar.classList.remove('bg-transparent', 'py-6');
                 logo.classList.remove('brightness-0', 'invert');
+                navCta.classList.add('bg-emerald-600', 'text-white');
+                navCta.classList.remove('bg-white', 'text-emerald-900');
             } else {
-                nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'py-4', 'shadow-xl');
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3');
+                navbar.classList.add('bg-transparent', 'py-6');
                 logo.classList.add('brightness-0', 'invert');
+                navCta.classList.remove('bg-emerald-600', 'text-white');
+                navCta.classList.add('bg-white', 'text-emerald-900');
             }
         });
     </script>
