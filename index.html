@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -126,15 +126,15 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Foto 1 -->
                 <div class="overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all">
-                    <img src="Imagen_2941.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 5">
+                    <img src="IMG_2941.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 5">
                 </div>
                 <!-- Foto 2 -->
                 <div class="overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all md:translate-y-8">
-                    <img src="Imagen_2942.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 6">
+                    <img src="IMG_2942.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 6">
                 </div>
                 <!-- Foto 3 -->
                 <div class="overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all">
-                    <img src="Imagen_2943.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 7">
+                    <img src="IMG_2943.jpg" class="w-full h-[450px] object-cover hover:scale-110 transition-transform duration-700" alt="Viaje Minca 7">
                 </div>
             </div>
         </div>
@@ -248,11 +248,36 @@
                     </div>
                 </div>
 
-                <a href="https://checkout.nequi.wompi.co/l/bEXEBu" class="block w-full py-8 bg-emerald-500 text-slate-950 rounded-3xl text-3xl font-black shadow-2xl hover:bg-emerald-400 transition-all transform hover:-translate-y-2 uppercase tracking-tighter">RESERVAR POR NEQUI</a>
+                <a href="https://checkout.nequi.wompi.co/l/bEXEBu" target="_blank" onclick="openModal()" class="block w-full py-8 bg-emerald-500 text-slate-950 rounded-3xl text-3xl font-black shadow-2xl hover:bg-emerald-400 transition-all transform hover:-translate-y-2 uppercase tracking-tighter">RESERVAR POR NEQUI</a>
                 <p class="mt-8 text-slate-500 text-xs font-bold uppercase tracking-widest italic">Punto de encuentro: Barranquilla</p>
+                <div class="mt-6 pt-6 border-t border-white/10">
+                    <p class="text-slate-500 text-xs">¿Necesitas cancelar? Escríbenos por <a href="https://wa.me/573209344964?text=Hola!%20Necesito%20cancelar%20mi%20reserva%20de%20Minca%20Mágica" target="_blank" class="text-emerald-400 hover:text-emerald-300 underline">WhatsApp</a></p>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal WhatsApp -->
+    <div id="modal-whatsapp" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="bg-slate-900 rounded-3xl p-8 md:p-12 max-w-md w-full text-center border border-emerald-500/30 shadow-2xl">
+            <div class="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="check" class="text-white" size="32"></i>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight">¡CASI LISTO!</h3>
+            <p class="text-slate-300 mb-6">Una vez realizado el pago, envíanos el comprobante por WhatsApp para confirmar tu reserva.</p>
+            <p class="text-slate-400 text-sm mb-6">¿Tienes otro método de pago? Escríbenos por WhatsApp</p>
+            <a href="https://wa.me/573209344964?text=Hola!%20Acabo%20de%20realizar%20mi%20pago%20para%20Minca%20Mágica" target="_blank" class="block w-full py-5 bg-emerald-500 text-slate-950 rounded-2xl text-xl font-black hover:bg-emerald-400 transition-all mb-3">
+                <span class="flex items-center justify-center gap-3"><i data-lucide="message-circle" size="24"></i> ENVIAR COMPROBANTE</span>
+            </a>
+            <a href="https://wa.me/573209344964?text=Hola!%20Necesito%20ayuda%20con%20mi%20reserva%20de%20Minca%20Mágica" target="_blank" class="block w-full py-4 bg-white/10 text-white rounded-2xl text-base font-bold hover:bg-white/20 transition-all mb-3">
+                <span class="flex items-center justify-center gap-2"><i data-lucide="help-circle" size="20"></i> NECESITO AYUDA</span>
+            </a>
+            <button onclick="clearAndClose()" class="w-full py-4 bg-slate-800 text-slate-400 rounded-2xl text-sm font-bold hover:bg-slate-700 hover:text-white transition-all mb-2">
+                Aún no he hecho mi pago
+            </button>
+            <button onclick="closeModal()" class="text-slate-600 text-xs font-bold hover:text-white transition-all mt-2">Cerrar</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="py-24 bg-slate-950 text-white px-6 border-t border-white/5">
@@ -279,6 +304,7 @@
         const navbar = document.getElementById('navbar');
         const logo = document.getElementById('logo');
         const navCta = document.getElementById('nav-cta');
+        const modal = document.getElementById('modal-whatsapp');
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 80) {
@@ -294,6 +320,29 @@
                 navCta.classList.remove('bg-emerald-600', 'text-white');
                 navCta.classList.add('bg-white', 'text-emerald-900');
             }
+        });
+
+        function openModal() {
+            localStorage.setItem('nequi_clicked', Date.now());
+            setTimeout(() => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                lucide.createIcons();
+            }, 500);
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function clearAndClose() {
+            localStorage.removeItem('nequi_clicked');
+            closeModal();
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
         });
     </script>
 </body>
