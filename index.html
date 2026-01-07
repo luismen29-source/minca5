@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minca Mágica | Luisito el Viajero</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
@@ -36,6 +38,7 @@
 </head>
 <body class="bg-slate-50 text-slate-900 overflow-x-hidden">
 
+    <!-- Navegación -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center">
@@ -69,12 +72,14 @@
         </div>
     </nav>
 
+    <!-- Hero Section con Portada Nueva -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img 
                 src="Donde-queda-Minca-en-Santa-Marta 2.jpg" 
-                alt="Sierra Nevada Minca Paisaje" 
+                alt="Portada Minca" 
                 class="w-full h-full object-cover hero-zoom"
+                onerror="this.src='https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2070&auto=format&fit=crop'"
             >
             <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-slate-50"></div>
         </div>
@@ -101,6 +106,7 @@
         </div>
     </section>
 
+    <!-- Sección de Viajes Grupales con Fotos Nuevas -->
     <section class="py-24 bg-white px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -111,25 +117,31 @@
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                 <div class="space-y-4 md:space-y-6">
-                    <img src="584dced6ee7a1e70dfc25048cdf804f4.jpg" class="w-full aspect-[3/4] object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Minca Experiencia">
-                    <img src="IMG_0388.HEIC" class="w-full aspect-square object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Minca Grupo">
+                    <img src="584dced6ee7a1e70dfc25048cdf804f4.jpg" class="rounded-3xl shadow-lg hover:scale-105 transition-transform w-full aspect-[3/4] object-cover" alt="Viaje Grupal 1">
+                    <img src="Donde-queda-Minca-en-Santa-Marta 2.jpg" class="rounded-3xl shadow-lg hover:scale-105 transition-transform w-full aspect-square object-cover" alt="Viaje Grupal 2">
                 </div>
                 <div class="pt-12 space-y-4 md:space-y-6">
-                    <img src="IMG_0554.heic" class="w-full aspect-square object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Minca Amigos">
-                    <img src="IMG_0913.heic" class="w-full aspect-[3/4] object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Senderismo Minca">
+                    <img src="IMG_0388.HEIC" class="rounded-3xl shadow-lg hover:scale-105 transition-transform w-full aspect-square object-cover" alt="Viaje Grupal 3">
+                    <img src="IMG_0554.heic" class="rounded-3xl shadow-lg hover:scale-105 transition-transform w-full aspect-[3/4] object-cover" alt="Viaje Grupal 4">
                 </div>
                 <div class="space-y-4 md:space-y-6">
-                    <img src="Imagen_2941.jpg" class="w-full aspect-[3/4] object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Cascadas">
-                    <img src="Imagen_2942.jpg" class="w-full aspect-square object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Mirador">
+                    <img src="IMG_0913.heic" class="rounded-3xl shadow-lg hover:scale-105 transition-transform w-full aspect-[3/4] object-cover" alt="Viaje Grupal 5">
+                    <img src="Imagen_2941.jpg" class="rounded-3xl shadow-lg hover:scale-105 transition-transform w-full aspect-square object-cover" alt="Viaje Grupal 6">
                 </div>
                 <div class="pt-12 space-y-4 md:space-y-6">
-                    <img src="Imagen_2943.jpg" class="w-full aspect-square object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Equipo Luisito">
-                    <img src="584dced6ee7a1e70dfc25048cdf804f4.jpg" class="w-full aspect-[3/4] object-cover rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Atardecer Sierra">
+                    <img src="Imagen_2942.jpg" class="rounded-3xl shadow-lg hover:scale-105 transition-transform w-full aspect-square object-cover" alt="Viaje Grupal 7">
+                    <img src="Imagen_2943.jpg" class="rounded-3xl shadow-lg hover:scale-105 transition-transform w-full aspect-[3/4] object-cover" alt="Viaje Grupal 8">
                 </div>
+            </div>
+            
+            <!-- Imagen Adicional de 4x4 -->
+            <div class="mt-8 md:mt-12 max-w-4xl mx-auto">
+                <img src="tour-4x4-cascadas-marinka.avif" class="rounded-[3rem] shadow-2xl hover:scale-[1.02] transition-transform w-full h-64 md:h-96 object-cover" alt="Tour 4x4">
             </div>
         </div>
     </section>
 
+    <!-- Testimonios -->
     <section class="py-24 px-6 bg-slate-100">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-black mb-16 tracking-tighter text-center uppercase">Voces de la <span class="text-emerald-600">Experiencia</span></h2>
@@ -138,11 +150,10 @@
                 <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
                     <p class="text-slate-600 italic mb-6">"Vine sola desde Bogotá y fue lo mejor. Luisito te hace sentir en familia desde el minuto uno. ¡Las fotos quedaron increíbles!"</p>
                     <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/150?u=maria_traveler&gender=female" class="w-12 h-12 rounded-full border-2 border-emerald-500 object-cover" alt="María">
+                        <img src="https://i.pravatar.cc/150?u=maria" class="w-12 h-12 rounded-full border-2 border-emerald-500" alt="Avatar">
                         <div><div class="font-black text-slate-900">María G.</div><div class="text-xs text-slate-400">Bogotá</div></div>
                     </div>
                 </div>
-
                 <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
                     <p class="text-slate-600 italic mb-6">"La organización es impecable. Los carros 4x4 son súper cómodos y el almuerzo en Sierra Minca fue de otro mundo."</p>
                     <div class="flex items-center gap-4">
@@ -150,7 +161,6 @@
                         <div><div class="font-black text-slate-900">Juan Pablo R.</div><div class="text-xs text-slate-400">Medellín</div></div>
                     </div>
                 </div>
-
                 <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
                     <p class="text-slate-600 italic mb-6">"Es una desconexión real. No te tienes que preocupar por nada, solo por disfrutar. ¡Ya quiero repetir en Febrero!"</p>
                     <div class="flex items-center gap-4">
@@ -158,11 +168,10 @@
                         <div><div class="font-black text-slate-900">Carolina M.</div><div class="text-xs text-slate-400">Cali</div></div>
                     </div>
                 </div>
-
                 <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
                     <p class="text-slate-600 italic mb-6">"Minca es mágica, pero ir con alguien que conoce los spots secretos lo hace 100 veces mejor. ¡Gracias Luis!"</p>
                     <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/150?u=andres_viajero&gender=male" class="w-12 h-12 rounded-full border-2 border-emerald-500 object-cover" alt="Andrés">
+                        <img src="https://i.pravatar.cc/150?u=andres" class="w-12 h-12 rounded-full border-2 border-emerald-500" alt="Avatar">
                         <div><div class="font-black text-slate-900">Andrés S.</div><div class="text-xs text-slate-400">Barranquilla</div></div>
                     </div>
                 </div>
@@ -170,6 +179,7 @@
         </div>
     </section>
 
+    <!-- Itinerario Corto -->
     <section class="py-24 bg-emerald-900 text-white text-center">
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter italic">LO QUE INCLUYE</h2>
@@ -194,6 +204,7 @@
         </div>
     </section>
 
+    <!-- Reserva y Fechas -->
     <section id="reserva" class="py-24 px-6 bg-slate-50">
         <div class="max-w-4xl mx-auto text-center">
             <div class="bg-slate-900 rounded-[4rem] p-12 md:p-24 text-white shadow-3xl border border-white/5">
@@ -226,6 +237,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="py-24 bg-slate-950 text-white px-6">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
             <div class="mb-16">
