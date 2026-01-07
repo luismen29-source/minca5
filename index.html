@@ -145,53 +145,41 @@
             <p class="text-slate-400 text-sm mb-6">¿Tienes otro método de pago? Escríbenos por WhatsApp</p> <a href="https://wa.me/573209344964?text=Hola!%20Acabo%20de%20realizar%20mi%20pago%20para%20Minca%20Mágica" target="_blank" class="block w-full py-5 bg-emerald-500 text-slate-950 rounded-2xl text-xl font-black hover:bg-emerald-400 transition-all mb-3"> <span class="flex items-center justify-center gap-3"><i data-lucide="message-circle" size="24"></i> ENVIAR COMPROBANTE</span> </a> <a href="https://wa.me/573209344964?text=Hola!%20Necesito%20ayuda%20con%20mi%20reserva%20de%20Minca%20Mágica" target="_blank" class="block w-full py-4 bg-white/10 text-white rounded-2xl text-base font-bold hover:bg-white/20 transition-all mb-3"> <span class="flex items-center justify-center gap-2"><i data-lucide="help-circle" size="20"></i> NECESITO AYUDA</span> </a> <button onclick="clearAndClose()" class="w-full py-4 bg-slate-800 text-slate-400 rounded-2xl text-sm font-bold hover:bg-slate-700 hover:text-white transition-all mb-2"> Aún no he hecho mi pago </button> <button onclick="closeModal()" class="text-slate-600 text-xs font-bold hover:text-white transition-all mt-2">Cerrar</button>
         </div>
     </div>
-    <section id="reserva" class="py-20 px-4 bg-slate-50">
+    <section id="reserva" class="py-16 px-4 bg-[#f8fafc]">
     <div class="max-w-xl mx-auto">
-        <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100">
+        
+        <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100 flex flex-col">
             
-            <div class="p-8 pb-4 text-center">
-                <span class="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 rounded-full">
+            <div class="pt-10 pb-6 px-8 text-center bg-white z-20">
+                <span class="inline-block px-4 py-1 mb-4 text-[10px] font-bold tracking-[0.2em] text-emerald-700 uppercase bg-emerald-50 rounded-full">
                     Cupos Limitados
                 </span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-                    Inicia tu Aventura
-                </h2>
-                <p class="text-slate-500 text-lg leading-relaxed">
-                    Completa tus datos para asegurar tu lugar en esta experiencia exclusiva.
-                </p>
+                <h2 class="text-3xl font-black text-slate-900 mb-3 leading-tight">Inicia tu Aventura</h2>
+                <p class="text-slate-500 text-sm px-6">Completa tus datos para asegurar tu lugar en esta experiencia exclusiva.</p>
             </div>
 
-            <div class="relative w-full overflow-hidden leading-none">
-                <div class="absolute top-0 left-0 w-full h-2 bg-white z-10"></div>
-                
+            <div class="relative overflow-hidden w-full bg-white" style="height: 480px;"> 
                 <iframe 
                     src="https://docs.google.com/forms/d/e/1FAIpQLSc0KppvQ4OBLCjhvb6ut0eTon7kYYH52YpuBBi8Ium35bc1qQ/viewform?embedded=true" 
-                    width="100%" 
-                    height="680" 
+                    class="absolute w-full"
+                    style="top: -145px; height: 750px; border: none;"
                     frameborder="0" 
                     marginheight="0" 
-                    marginwidth="0"
-                    class="rounded-b-[2.5rem] focus:outline-none transition-all duration-300"
-                    style="border: none; margin-top: -10px;">
+                    marginwidth="0">
                     Cargando...
                 </iframe>
             </div>
-        </div>
 
-        <div class="mt-8 text-center px-6">
-            <div class="flex items-center justify-center gap-2 mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                <span class="text-sm font-medium text-slate-600">Tus datos están protegidos y seguros.</span>
-            </div>
-            <p class="text-xs text-slate-400 max-w-sm mx-auto">
-                Al enviar el formulario, aceptas el tratamiento de tus datos personales para fines de reserva y contacto directo.
-            </p>
-        </div>
-    </div>
-</section>
-
+            <div class="px-10 pb-10 bg-white z-20">
+                
+                <div class="flex items-center justify-center mb-6">
+                    <label class="inline-flex items-center cursor-pointer group">
+                        <input type="checkbox" class="w-4 h-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 transition-all" required>
+                        <span class="ml-3 text-[11px] text-slate-400 group-hover:text-slate-600 transition-colors uppercase tracking-wider font-medium">
+                            Acepto el tratamiento de datos personales
+                        </span>
+                    </label>
+                </div>
 <style>
     /* Suaviza la carga del iframe */
     iframe {
