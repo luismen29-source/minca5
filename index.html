@@ -6,7 +6,7 @@
     <title>Minca Mágica | Luisito el Viajero</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons (utilizando la versión para navegador) -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
@@ -15,378 +15,269 @@
             font-family: 'Inter', sans-serif;
         }
 
-        @keyframes fade-in {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes slide-down {
-            from { opacity: 0; max-height: 0; }
-            to { opacity: 1; max-height: 500px; }
+        @keyframes zoom-slow {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
         }
 
-        .animate-fade-in {
-            animation: fade-in 1s ease-out forwards;
+        .hero-zoom {
+            animation: zoom-slow 20s linear infinite alternate;
         }
 
         .premium-logo-glow:hover {
-            filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.6));
+            filter: drop-shadow(0 0 15px rgba(52, 211, 153, 0.8));
             transform: scale(1.05);
         }
 
-        .accordion-content {
-            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-        }
-
-        .accordion-content.active {
-            max-height: 500px;
-            opacity: 1;
-        }
-
-        /* Glassmorphism utility */
         .glass {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 overflow-x-hidden">
 
     <!-- Navegación -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-5">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center">
                 <a href="#">
+                    <!-- Logo Luisito con tamaño optimizado -->
                     <img 
                         id="logo"
                         src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" 
                         alt="Logo Luisito el Viajero" 
-                        class="h-12 md:h-16 w-auto transition-all duration-500 premium-logo-glow object-contain brightness-0 invert"
+                        class="h-20 md:h-24 w-auto transition-all duration-500 premium-logo-glow object-contain brightness-0 invert"
                     >
                 </a>
             </div>
 
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-8">
                 <a 
                     href="https://instagram.com/luisitoelviajero"
                     target="_blank"
-                    class="nav-link hidden md:flex items-center gap-2 font-bold transition-all text-white/80 hover:text-white"
+                    class="nav-link hidden md:flex items-center gap-2 font-bold transition-all text-white/90 hover:text-white"
                 >
-                    <i data-lucide="instagram" size="20"></i>
+                    <i data-lucide="instagram" size="22"></i>
                     <span>@luisitoelviajero</span>
                 </a>
                 <a 
                     href="#reserva" 
                     id="nav-cta"
-                    class="px-8 py-3 rounded-2xl font-black tracking-tighter shadow-xl transition-all transform hover:scale-105 bg-white text-emerald-900"
+                    class="px-10 py-4 rounded-2xl font-black tracking-tighter shadow-2xl transition-all transform hover:scale-105 bg-white text-emerald-900 text-lg"
                 >
-                    RESERVAR CUPO
+                    RESERVAR AHORA
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section con Fondo de Minca y Título -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img 
-                src="https://images.unsplash.com/photo-1590603784117-64673cc09628?q=80&w=2070&auto=format&fit=crop" 
-                alt="Sierra Nevada Minca" 
-                class="w-full h-full object-cover scale-105"
+                src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2070&auto=format&fit=crop" 
+                alt="Sierra Nevada Minca Paisaje" 
+                class="w-full h-full object-cover hero-zoom"
             >
-            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-slate-50"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-slate-50"></div>
         </div>
         
-        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-            <span class="inline-block px-4 py-1 mb-6 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/30 text-emerald-300 font-medium tracking-widest animate-fade-in uppercase text-xs">
-                MAG-INANA. AG-REKONNEKTA. AG-BIAG MANEN.
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
+            <span class="inline-block px-5 py-2 mb-8 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/30 text-emerald-300 font-bold tracking-[0.2em] uppercase text-xs animate-pulse">
+                EXPERIENCIAS EXCLUSIVAS 2026
             </span>
-            <h1 class="text-6xl md:text-9xl font-black mb-6 tracking-tighter leading-[1] drop-shadow-2xl">
+            <h1 class="text-7xl md:text-[10rem] font-black mb-8 tracking-tighter leading-[0.85] drop-shadow-2xl">
                 MINCA <br />
                 <span class="text-emerald-400 italic">MÁGICA</span>
             </h1>
-            <p class="text-xl md:text-3xl mb-10 text-slate-100 font-light max-w-2xl mx-auto drop-shadow-md">
-                El escape que tu alma estaba pidiendo. Descubre cascadas vírgenes y el aire más puro de la Sierra Nevada.
+            <p class="text-2xl md:text-4xl mb-12 text-slate-100 font-light max-w-3xl mx-auto drop-shadow-lg leading-tight">
+                Reconecta con la Sierra Nevada. Desconéctate del caos y vuelve a sentirte vivo.
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <a 
-                    href="https://checkout.nequi.wompi.co/l/bEXEBu"
-                    class="px-12 py-6 bg-emerald-500 hover:bg-emerald-400 text-white rounded-3xl text-xl font-black shadow-2xl shadow-emerald-500/40 transition-all transform hover:-translate-y-1"
+                    href="#reserva"
+                    class="px-14 py-7 bg-emerald-500 hover:bg-emerald-400 text-white rounded-3xl text-2xl font-black shadow-2xl shadow-emerald-500/50 transition-all transform hover:-translate-y-2"
                 >
-                    ¡RESERVAR MI CUPO AHORA!
+                    ¡QUIERO MI CUPO!
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Dolor y Empatía -->
-    <section class="py-24 px-6 bg-slate-50">
-        <div class="max-w-7xl auto mx-auto">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="relative">
-                    <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                        <img 
-                            src="https://images.unsplash.com/photo-1542332213-31f87348057f?q=80&w=2070&auto=format&fit=crop" 
-                            alt="Persona relajándose en la naturaleza" 
-                            class="w-full h-full object-cover"
-                        >
-                    </div>
-                    <div class="absolute -bottom-8 -right-8 bg-white p-8 rounded-2xl shadow-xl max-w-xs hidden lg:block border border-slate-100">
-                        <p class="text-slate-600 italic">"Sentía que la vida se me iba entre correos. Necesitaba volver a sentirme viva y Minca lo logró."</p>
-                        <div class="mt-4 font-bold text-emerald-800">— María G., 34 años</div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h2 class="text-sm font-bold text-emerald-600 tracking-widest uppercase mb-4">¿Te suena familiar?</h2>
-                    <h3 class="text-4xl md:text-5xl font-black mb-8 leading-tight text-slate-900 tracking-tighter">La rutina no es vida, es solo el tiempo pasando.</h3>
-                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                        Vives entre pantallas y responsabilidades infinitas. El estrés se ha vuelto tu compañero silencioso y has olvidado lo que se siente respirar aire puro sin mirar el reloj. Mereces un escape real.
-                    </p>
-                    
-                    <div class="space-y-4 mb-10">
-                        <div class="flex gap-3 items-center">
-                            <i data-lucide="check-circle" class="text-emerald-500 shrink-0"></i>
-                            <span class="text-slate-800 font-bold text-lg">Logística completa: Tú solo disfruta.</span>
-                        </div>
-                        <div class="flex gap-3 items-center">
-                            <i data-lucide="check-circle" class="text-emerald-500 shrink-0"></i>
-                            <span class="text-slate-800 font-bold text-lg">Grupo seguro y amigable desde Barranquilla.</span>
-                        </div>
-                        <div class="flex gap-3 items-center">
-                            <i data-lucide="check-circle" class="text-emerald-500 shrink-0"></i>
-                            <span class="text-slate-800 font-bold text-lg">Destinos exclusivos y auténticos.</span>
-                        </div>
-                        <div class="flex gap-3 items-center">
-                            <i data-lucide="check-circle" class="text-emerald-500 shrink-0"></i>
-                            <span class="text-slate-800 font-bold text-lg">Recarga real para tu salud mental.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- La Solución -->
-    <section class="py-24 bg-emerald-900 text-white relative overflow-hidden text-center">
-        <div class="max-w-4xl mx-auto px-6 relative z-10">
-            <i data-lucide="sparkles" class="mx-auto mb-6 text-emerald-400" style="width: 48px; height: 48px;"></i>
-            <h2 class="text-4xl md:text-5xl font-black mb-8 uppercase tracking-tighter italic">Tour Sierra Minca + Cascadas</h2>
-            <p class="text-xl md:text-2xl text-emerald-100 font-light leading-relaxed mb-12">
-                Hemos diseñado una experiencia donde el lujo es la exclusividad de bañarse en una cascada virgen y ver el atardecer desde una malla suspendida en la montaña.
-            </p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full bg-emerald-800 flex items-center justify-center mb-4 shadow-lg border border-emerald-700/50">
-                        <i data-lucide="waves" class="text-emerald-400"></i>
-                    </div>
-                    <span class="font-bold text-emerald-200 uppercase text-xs tracking-widest">Cascadas</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full bg-emerald-800 flex items-center justify-center mb-4 shadow-lg border border-emerald-700/50">
-                        <i data-lucide="coffee" class="text-emerald-400"></i>
-                    </div>
-                    <span class="font-bold text-emerald-200 uppercase text-xs tracking-widest">Café de Origen</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full bg-emerald-800 flex items-center justify-center mb-4 shadow-lg border border-emerald-700/50">
-                        <i data-lucide="mountain" class="text-emerald-400"></i>
-                    </div>
-                    <span class="font-bold text-emerald-200 uppercase text-xs tracking-widest">Miradores</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full bg-emerald-800 flex items-center justify-center mb-4 shadow-lg border border-emerald-700/50">
-                        <i data-lucide="shield-check" class="text-emerald-400"></i>
-                    </div>
-                    <span class="font-bold text-emerald-200 uppercase text-xs tracking-widest">Todo Incluido</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Planes -->
-    <section class="py-24 px-6 bg-white">
+    <!-- Sección de Viajes Grupales -->
+    <section class="py-24 bg-white px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-slate-50 rounded-3xl p-10 border border-slate-100 hover:shadow-xl transition-all">
-                    <div class="mb-6 inline-block p-4 rounded-2xl bg-amber-100 text-amber-700"><i data-lucide="coffee" style="width: 40px; height: 40px;"></i></div>
-                    <h4 class="text-2xl font-black mb-4 uppercase tracking-tighter">Cultura del Café</h4>
-                    <ul class="space-y-4 text-slate-700 font-medium">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-amber-500 rounded-full"></div> City Tour en Minca.</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-amber-500 rounded-full"></div> Catación de café orgánico.</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-amber-500 rounded-full"></div> Famoso pan de chocolate.</li>
-                    </ul>
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-emerald-600 tracking-widest uppercase mb-4">Comunidad de Viajeros</h2>
+                <h3 class="text-5xl md:text-6xl font-black tracking-tighter uppercase">Nuestros <span class="text-emerald-500 italic">Viajes Grupales</span></h3>
+                <p class="mt-6 text-slate-500 max-w-2xl mx-auto text-lg">Únete a un grupo de personas con tu misma vibra. No necesitas venir acompañado, aquí harás nuevos amigos.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="space-y-4 md:space-y-6">
+                    <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=1974&auto=format&fit=crop" class="rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Grupo Minca">
+                    <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?q=80&w=2070&auto=format&fit=crop" class="rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Amigos en Minca">
                 </div>
-
-                <!-- Card 2 -->
-                <div class="bg-white rounded-3xl p-10 shadow-2xl border-t-8 border-emerald-500 transform lg:-translate-y-8">
-                    <div class="mb-6 inline-block p-4 rounded-2xl bg-emerald-100 text-emerald-700"><i data-lucide="mountain" style="width: 40px; height: 40px;"></i></div>
-                    <h4 class="text-2xl font-black mb-4 uppercase tracking-tighter">Aventura VIP</h4>
-                    <ul class="space-y-4 text-slate-700 font-medium">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div> Pasadía en Sierra Minca Hostal.</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div> Almuerzo a la carta con vista.</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div> Acceso a mallas y piscinas.</li>
-                        <li class="text-emerald-700 font-black flex items-center gap-2 uppercase text-xs">
-                            <div class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div> Transporte en 4x4 incluido.
-                        </li>
-                    </ul>
+                <div class="pt-12 space-y-4 md:space-y-6">
+                    <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?q=80&w=2070&auto=format&fit=crop" class="rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Cena Grupal">
+                    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1974&auto=format&fit=crop" class="rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Senderismo">
                 </div>
-
-                <!-- Card 3 -->
-                <div class="bg-slate-50 rounded-3xl p-10 border border-slate-100 hover:shadow-xl transition-all">
-                    <div class="mb-6 inline-block p-4 rounded-2xl bg-indigo-100 text-indigo-700"><i data-lucide="heart" style="width: 40px; height: 40px;"></i></div>
-                    <h4 class="text-2xl font-black mb-4 uppercase tracking-tighter">Conexión Natural</h4>
-                    <ul class="space-y-4 text-slate-700 font-medium">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div> Visita a Sierra Wonders.</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div> Alimentación de colibríes.</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div> Transporte Barranquilla-Minca.</li>
-                    </ul>
+                <div class="space-y-4 md:space-y-6">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop" class="rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Cascadas">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop" class="rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Mirador">
+                </div>
+                <div class="pt-12 space-y-4 md:space-y-6">
+                    <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=2066&auto=format&fit=crop" class="rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Equipo">
+                    <img src="https://images.unsplash.com/photo-1493552152660-f915ab47ae9d?q=80&w=1974&auto=format&fit=crop" class="rounded-3xl shadow-lg hover:scale-105 transition-transform" alt="Atardecer">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Reserva -->
+    <!-- Testimonios -->
+    <section class="py-24 px-6 bg-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-black mb-16 tracking-tighter text-center uppercase">Voces de la <span class="text-emerald-600">Experiencia</span></h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                    <p class="text-slate-600 italic mb-6">"Vine sola desde Bogotá y fue lo mejor. Luisito te hace sentir en familia desde el minuto uno. ¡Las fotos quedaron increíbles!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/150?u=maria" class="w-12 h-12 rounded-full border-2 border-emerald-500" alt="Avatar">
+                        <div><div class="font-black text-slate-900">María G.</div><div class="text-xs text-slate-400">Bogotá</div></div>
+                    </div>
+                </div>
+                <!-- Testimonio 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                    <p class="text-slate-600 italic mb-6">"La organización es impecable. Los carros 4x4 son súper cómodos y el almuerzo en Sierra Minca fue de otro mundo."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/150?u=juan" class="w-12 h-12 rounded-full border-2 border-emerald-500" alt="Avatar">
+                        <div><div class="font-black text-slate-900">Juan Pablo R.</div><div class="text-xs text-slate-400">Medellín</div></div>
+                    </div>
+                </div>
+                <!-- Testimonio 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                    <p class="text-slate-600 italic mb-6">"Es una desconexión real. No te tienes que preocupar por nada, solo por disfrutar. ¡Ya quiero repetir en Febrero!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/150?u=caro" class="w-12 h-12 rounded-full border-2 border-emerald-500" alt="Avatar">
+                        <div><div class="font-black text-slate-900">Carolina M.</div><div class="text-xs text-slate-400">Cali</div></div>
+                    </div>
+                </div>
+                <!-- Testimonio 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                    <p class="text-slate-600 italic mb-6">"Minca es mágica, pero ir con alguien que conoce los spots secretos lo hace 100 veces mejor. ¡Gracias Luis!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/150?u=andres" class="w-12 h-12 rounded-full border-2 border-emerald-500" alt="Avatar">
+                        <div><div class="font-black text-slate-900">Andrés S.</div><div class="text-xs text-slate-400">Barranquilla</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerario Corto -->
+    <section class="py-24 bg-emerald-900 text-white text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter italic">LO QUE INCLUYE</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center">
+                    <i data-lucide="bus" class="text-emerald-400 mb-4" size="40"></i>
+                    <span class="font-black uppercase text-xs">Transporte VIP</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-lucide="utensils" class="text-emerald-400 mb-4" size="40"></i>
+                    <span class="font-black uppercase text-xs">Almuerzo Gourmet</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-lucide="camera" class="text-emerald-400 mb-4" size="40"></i>
+                    <span class="font-black uppercase text-xs">Fotos & Videos</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-lucide="ticket" class="text-emerald-400 mb-4" size="40"></i>
+                    <span class="font-black uppercase text-xs">Entradas Full</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reserva y Fechas Corregidas para 2026 -->
     <section id="reserva" class="py-24 px-6 bg-slate-50">
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-slate-900 rounded-[3rem] p-8 md:p-16 text-white text-center shadow-3xl">
-                <h2 class="text-4xl font-black mb-12 tracking-tighter uppercase italic">Elige tu fecha</h2>
-                <div class="grid md:grid-cols-2 gap-6 mb-12 text-left">
-                    <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4">
-                        <i data-lucide="calendar" class="text-emerald-400"></i>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bg-slate-900 rounded-[4rem] p-12 md:p-24 text-white shadow-3xl border border-white/5">
+                <h2 class="text-5xl font-black mb-12 tracking-tighter uppercase italic">PRÓXIMAS SALIDAS</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-16 text-left">
+                    <!-- Fecha 1 Corregida: 11 de enero 2026 es Domingo -->
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex items-center gap-5 hover:bg-white/10 transition-all cursor-default">
+                        <i data-lucide="calendar" class="text-emerald-400" size="32"></i>
                         <div>
-                            <div class="font-black text-xl tracking-tight">11 de Enero</div>
-                            <div class="text-xs text-slate-400 uppercase tracking-widest font-bold">Sábado - Cupos Disponibles</div>
+                            <div class="font-black text-2xl tracking-tight leading-none mb-1">11 ENERO</div>
+                            <div class="text-xs text-emerald-500 uppercase tracking-widest font-black">DOMINGO 2026 - ÚLTIMOS CUPOS</div>
                         </div>
                     </div>
-                    <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4">
-                        <i data-lucide="calendar" class="text-emerald-400"></i>
+                    <!-- Fecha 2 Corregida: 01 de febrero 2026 es Domingo -->
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex items-center gap-5 hover:bg-white/10 transition-all cursor-default">
+                        <i data-lucide="calendar" class="text-emerald-400" size="32"></i>
                         <div>
-                            <div class="font-black text-xl tracking-tight">1 de Febrero</div>
-                            <div class="text-xs text-slate-400 uppercase tracking-widest font-bold">Sábado - Últimos Cupos</div>
+                            <div class="font-black text-2xl tracking-tight leading-none mb-1">01 FEBRERO</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-widest font-black">DOMINGO 2026 - DISPONIBLE</div>
                         </div>
                     </div>
                 </div>
-                <div class="mb-12">
-                    <div class="text-6xl md:text-7xl font-black mb-2 tracking-tighter">$290.000 <span class="text-lg text-slate-400 font-normal uppercase tracking-widest">COP</span></div>
-                    <p class="text-emerald-400 font-black uppercase tracking-widest text-sm">Reserva tu lugar con solo $60.000</p>
-                </div>
-                <a href="https://checkout.nequi.wompi.co/l/bEXEBu" class="block w-full py-6 bg-emerald-500 text-slate-900 rounded-2xl text-2xl font-black shadow-xl hover:bg-emerald-400 transition-all transform hover:-translate-y-1 uppercase tracking-tighter">RESERVAR MI CUPO</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- FAQs -->
-    <section class="py-24 px-6 bg-white">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-4xl font-black mb-12 text-center tracking-tighter uppercase italic">Preguntas Frecuentes</h2>
-            <div class="space-y-4">
-                <!-- FAQ 1 -->
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
-                    <button class="accordion-btn w-full flex justify-between items-center p-6 text-left group">
-                        <span class="font-black text-lg tracking-tight uppercase">¿Vale la pena el precio?</span>
-                        <i data-lucide="plus" class="text-slate-400 group-hover:text-emerald-600 transition-all"></i>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 text-slate-600 font-medium">
-                        ¡Totalmente! El tour incluye transporte VIP ida y vuelta desde Barranquilla, traslado interno en 4x4, almuerzo a la carta, entradas a todos los lugares y un guía experto que se encarga de todo.
-                    </div>
+                <div class="mb-16">
+                    <div class="text-7xl md:text-8xl font-black mb-4 tracking-tighter leading-none">$290.000 <span class="text-xl text-slate-500 font-normal uppercase tracking-[0.3em]">COP</span></div>
+                    <p class="text-emerald-400 font-black uppercase tracking-[0.2em] text-sm bg-emerald-500/10 inline-block px-6 py-2 rounded-full border border-emerald-500/30">Reserva con solo $60.000</p>
                 </div>
-                <!-- FAQ 2 -->
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
-                    <button class="accordion-btn w-full flex justify-between items-center p-6 text-left group">
-                        <span class="font-black text-lg tracking-tight uppercase">¿Es seguro viajar solo o sola?</span>
-                        <i data-lucide="plus" class="text-slate-400 group-hover:text-emerald-600 transition-all"></i>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 text-slate-600 font-medium">
-                        ¡Es lo ideal! La mayoría de nuestros viajeros vienen solos. Fomentamos un ambiente de comunidad donde terminas haciendo grandes amigos. Además, Luisito te acompaña durante toda la experiencia.
-                    </div>
-                </div>
+
+                <a href="https://checkout.nequi.wompi.co/l/bEXEBu" class="block w-full py-8 bg-emerald-500 text-slate-950 rounded-3xl text-3xl font-black shadow-2xl hover:bg-emerald-400 transition-all transform hover:-translate-y-2 uppercase tracking-tighter">RESERVAR MI CUPO</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 bg-slate-900 text-white px-6">
+    <footer class="py-24 bg-slate-950 text-white px-6">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-            <div class="relative group mb-12">
+            <div class="mb-16">
                 <img 
                     src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" 
-                    alt="Logo Luisito el Viajero Footer" 
-                    class="h-24 md:h-32 w-auto transition-all duration-500 hover:scale-110 brightness-0 invert"
+                    alt="Logo Luisito el Viajero" 
+                    class="h-32 md:h-40 w-auto brightness-0 invert opacity-90"
                 >
             </div>
-            <div class="flex flex-col items-center gap-8 mb-16">
-                <a href="https://instagram.com/luisitoelviajero" target="_blank" class="flex items-center gap-3 text-emerald-400 text-3xl font-black transition-transform hover:scale-110 tracking-tighter">
-                    <i data-lucide="instagram" style="width: 40px; height: 40px;"></i> @luisitoelviajero
-                </a>
-                <p class="max-w-lg text-slate-400 text-lg font-medium italic">
-                    "Mi misión es que te enamores de Colombia tanto como yo lo estoy. Acompáñame en esta aventura."
-                </p>
-            </div>
-            <div class="w-full pt-12 border-t border-white/10 text-xs font-black text-slate-600 uppercase tracking-[0.5em]">
-                © 2024 Luisito el Viajero Tours • Minca, Sierra Nevada de Santa Marta
+            <a href="https://instagram.com/luisitoelviajero" target="_blank" class="flex items-center gap-4 text-emerald-400 text-4xl font-black transition-all hover:scale-110 tracking-tighter">
+                <i data-lucide="instagram" style="width: 48px; height: 48px;"></i> @luisitoelviajero
+            </a>
+            <div class="w-full pt-16 border-t border-white/5 mt-16 text-xs font-black text-slate-700 uppercase tracking-[0.6em]">
+                © 2026 LUISITO EL VIAJERO • SIERRA NEVADA DE SANTA MARTA
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript para interactividad -->
     <script>
-        // Inicializar iconos de Lucide
         lucide.createIcons();
 
-        // Control del scroll del Navbar
         const navbar = document.getElementById('navbar');
         const logo = document.getElementById('logo');
         const navCta = document.getElementById('nav-cta');
-        const navLinks = document.querySelectorAll('.nav-link');
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-white/80', 'backdrop-blur-xl', 'shadow-lg', 'py-2');
-                navbar.classList.remove('bg-transparent', 'py-5');
+            if (window.scrollY > 80) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3');
+                navbar.classList.remove('bg-transparent', 'py-6');
                 logo.classList.remove('brightness-0', 'invert');
                 navCta.classList.add('bg-emerald-600', 'text-white');
                 navCta.classList.remove('bg-white', 'text-emerald-900');
-                navLinks.forEach(link => {
-                    link.classList.add('text-slate-700', 'hover:text-emerald-600');
-                    link.classList.remove('text-white/80', 'hover:text-white');
-                });
             } else {
-                navbar.classList.remove('bg-white/80', 'backdrop-blur-xl', 'shadow-lg', 'py-2');
-                navbar.classList.add('bg-transparent', 'py-5');
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3');
+                navbar.classList.add('bg-transparent', 'py-6');
                 logo.classList.add('brightness-0', 'invert');
                 navCta.classList.remove('bg-emerald-600', 'text-white');
                 navCta.classList.add('bg-white', 'text-emerald-900');
-                navLinks.forEach(link => {
-                    link.classList.remove('text-slate-700', 'hover:text-emerald-600');
-                    link.classList.add('text-white/80', 'hover:text-white');
-                });
             }
-        });
-
-        // Acordeón de FAQs
-        const accordions = document.querySelectorAll('.accordion-btn');
-        accordions.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const content = btn.nextElementSibling;
-                const icon = btn.querySelector('i');
-                
-                // Toggle active class
-                content.classList.toggle('active');
-                
-                // Cambiar icono
-                if (content.classList.contains('active')) {
-                    icon.setAttribute('data-lucide', 'minus');
-                } else {
-                    icon.setAttribute('data-lucide', 'plus');
-                }
-                lucide.createIcons();
-            });
         });
     </script>
 </body>
