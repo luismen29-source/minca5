@@ -122,6 +122,20 @@
 </form>
     </div>
 </section>
+        <div id="modal-exito" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+  <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl transform transition-all">
+    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+    <h3 class="text-2xl font-black text-slate-900 mb-2 tracking-tighter">¡REGISTRO EXITOSO!</h3>
+    <p class="text-slate-500 mb-6 leading-tight">Tus datos han sido guardados. Ahora te llevaremos a la plataforma de pago.</p>
+    <button id="btn-entendido" class="w-full py-4 bg-emerald-600 text-white rounded-2xl font-black hover:bg-emerald-700 transition-colors uppercase tracking-tight">
+      Ir a pagar ahora
+    </button>
+  </div>
+</div>
         <script>
   // Conectamos con el formulario
   const formulario = document.querySelector('form');
@@ -137,7 +151,7 @@
 
     // 1. ENVÍO A GOOGLE SHEETS
     // Reemplaza el link de abajo por tu URL de Google Apps Script (la que termina en /exec)
-    const scriptURL = 'TU_URL_DE_GOOGLE_APPS_SCRIPT_AQUI';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec';
 
     fetch(scriptURL, { 
       method: 'POST', 
@@ -153,7 +167,7 @@
     .catch(error => {
       console.error('Error!', error.message);
       // Si el Excel falla, igual los mandamos a pagar para no perder la venta
-      window.location.href = "https://checkout.nequi.wompi.co/l/leIwcI";
+      window.location.href = "https://checkout.nequi.wompi.co/l/4NTTQO";
     });
   });
 </script>
