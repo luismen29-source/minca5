@@ -195,15 +195,9 @@
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec';
     const form = document.getElementById('google-sheet-form');
     const btn = document.getElementById('submit-btn');
-
-    if (form) {
-        form.addEventListener('submit', e => {
-            e.preventDefault(); // Evita que la página se recargue y suba al inicio
-            btn.disabled = true;
-            btn.innerHTML = "PROCESANDO REGISTRO...";
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec';
-const form = document.getElementById('google-sheet-form'); // Asegúrate que el id coincida con tu <form>
-const btn = document.getElementById('submit-btn'); // Asegúrate que el id coincida con tu <button>
+const form = document.getElementById('google-sheet-form');
+const btn = document.getElementById('submit-btn');
 
 if (form) {
   form.addEventListener('submit', e => {
@@ -219,7 +213,6 @@ if (form) {
       btn.innerHTML = "¡REGISTRO EXITOSO!";
       btn.style.backgroundColor = "#10b981";
       
-      // Desplazamiento suave a la sección de pago
       setTimeout(() => {
         const reservaSection = document.getElementById('reserva');
         if (reservaSection) {
@@ -230,10 +223,13 @@ if (form) {
       form.reset();
     })
     .catch(error => {
-      console.error('¡Error!', error.message);
+      console.error('Error!', error.message);
       btn.disabled = false;
       btn.innerHTML = "CONTINUAR AL PAGO";
-      alert("Hubo un error al enviar los datos. Inténtalo de nuevo.");
+      alert("Error al enviar. Verifica tu conexión.");
+    });
+  });
+}
     });
   });
 }
