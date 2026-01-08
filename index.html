@@ -222,22 +222,36 @@
                 navCta.classList.add('bg-white', 'text-emerald-900');
             }
         });
-
-        function openModal() {
-            localStorage.setItem('nequi_clicked', Date.now());
-            setTimeout(() => {
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                lucide.createIcons();
-            }, 500);
-        }
-// 1. FUNCIONES DEL MODAL DE WHATSAPP
+<script>
+        // 1. INICIALIZACIÓN Y NAVBAR
+        lucide.createIcons();
+        const navbar = document.getElementById('navbar');
+        const logo = document.getElementById('logo');
+        const navCta = document.getElementById('nav-cta');
         const modal = document.getElementById('modal-whatsapp');
 
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3');
+                navbar.classList.remove('py-6');
+                logo.classList.remove('brightness-0', 'invert');
+                navCta.classList.add('bg-emerald-600', 'text-white');
+                navCta.classList.remove('bg-white', 'text-emerald-900');
+            } else {
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3');
+                navbar.classList.add('py-6');
+                logo.classList.add('brightness-0', 'invert');
+                navCta.classList.remove('bg-emerald-600', 'text-white');
+                navCta.classList.add('bg-white', 'text-emerald-900');
+            }
+        });
+
+        // 2. FUNCIONES DEL MODAL DE WHATSAPP
         function openModal() {
             if (modal) {
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
+                lucide.createIcons();
             }
         }
 
@@ -253,14 +267,13 @@
             closeModal();
         }
 
-        // Cerrar modal al hacer clic fuera
         if (modal) {
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) closeModal();
             });
         }
 
-        // 2. CONEXIÓN GOOGLE SHEETS (REGISTRO)
+        // 3. CONEXIÓN GOOGLE SHEETS (REGISTRO)
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec';
         const form = document.getElementById('google-sheet-form');
         const btn = document.getElementById('submit-btn');
@@ -281,18 +294,20 @@
                     btn.style.backgroundColor = "#10b981";
                     setTimeout(() => {
                         const reservaSection = document.getElementById('reserva');
-                        if(reservaSection) reservaSection.scrollIntoView({ behavior: 'smooth' });
+                        if(reservaSection) {
+                            reservaSection.scrollIntoView({ behavior: 'smooth' });
+                        }
                     }, 1500);
                 })
                 .catch(error => {
                     console.error('Error!', error.message);
                     btn.disabled = false;
                     btn.innerHTML = "CONTINUAR AL PAGO";
+                    alert("Hubo un error al guardar. Intenta de nuevo.");
                 });
             });
         }
-                    });
-            });
+    </script>
         }
                         }, 1500);
                     })
