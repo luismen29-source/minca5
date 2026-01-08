@@ -210,8 +210,44 @@
       });
   });
 </script>
+<script>
+  const formulario = document.querySelector('form');
+  const botonPago = document.getElementById('submit-btn');
+  // Reemplaza con tu URL de Google que termina en /exec
+  const scriptURL = 'TU_URL_DE_GOOGLE_APPS_SCRIPT'; 
+
+  formulario.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    botonPago.innerHTML = "<span>REGISTRANDO...</span>";
+    botonPago.disabled = true;
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(formulario)})
+      .then(response => {
+        // Mostramos el modal de éxito
+        const modal = document.getElementById('modal-exito');
+        modal.classList.remove('hidden');
+
+        // Configuramos el botón del modal para ir a pagar
+        const btnContinuar = document.getElementById('btn-continuar');
+        btnContinuar.onclick = function() {
+          window.location.href = "https://checkout.nequi.wompi.co/l/leIwcI";
+        };
+
+        // Reset del botón original
+        botonPago.innerHTML = "<span>CONTINUAR AL PAGO</span>";
+        botonPago.disabled = false;
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        // Si falla el Excel, igual los mandamos a pagar
+        window.location.href = "https://checkout.nequi.wompi.co/l/leIwcI";
+      });
+  });
+</script>
 
 </body>
+</html>
 </div> <div id="modal-exito" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
   <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl">
     <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
