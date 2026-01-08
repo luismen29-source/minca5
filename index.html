@@ -198,6 +198,10 @@
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec';
 const form = document.getElementById('google-sheet-form');
 const btn = document.getElementById('submit-btn');
+// 1. Configuración de Google Sheets
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec';
+const form = document.getElementById('google-sheet-form');
+const btn = document.getElementById('submit-btn');
 
 if (form) {
   form.addEventListener('submit', e => {
@@ -213,6 +217,7 @@ if (form) {
       btn.innerHTML = "¡REGISTRO EXITOSO!";
       btn.style.backgroundColor = "#10b981";
       
+      // Desplazamiento suave a la sección de pago
       setTimeout(() => {
         const reservaSection = document.getElementById('reserva');
         if (reservaSection) {
@@ -230,10 +235,6 @@ if (form) {
     });
   });
 }
-    });
-  });
-}
-
     // 2. Funciones para el Modal de WhatsApp
     function openModal() {
         const modal = document.getElementById('modal-whatsapp');
