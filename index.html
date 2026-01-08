@@ -11,78 +11,72 @@
         body { font-family: 'Inter', sans-serif; }
         @keyframes zoom-slow { from { transform: scale(1); } to { transform: scale(1.1); } }
         .hero-zoom { animation: zoom-slow 20s linear infinite alternate; }
-        .premium-logo-glow:hover { filter: drop-shadow(0 0 15px rgba(52, 211, 153, 0.8)); transform: scale(1.05); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 overflow-x-hidden">
-    <div class="fixed w-full z-[60] bg-emerald-950 text-white py-2 px-6 border-b border-emerald-800/50">
-        <div class="max-w-7xl mx-auto flex justify-center items-center gap-3 text-center">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <p class="text-[10px] md:text-xs font-black tracking-[0.3em] uppercase">Experiencias exclusivas saliendo desde <span class="text-emerald-400">Barranquilla</span></p>
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        </div>
-    </div>
 
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 pt-14 pb-6 px-6">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 pt-10 pb-6 px-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#"><img id="logo" src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" alt="Logo" class="h-16 md:h-20 transition-all brightness-0 invert object-contain"></a>
-            <div class="flex items-center gap-8">
-                <a href="#registro" id="nav-cta" class="px-8 py-3 rounded-2xl font-black tracking-tighter shadow-2xl bg-white text-emerald-900 text-sm md:text-base">RESERVAR AHORA</a>
-            </div>
+            <img id="logo" src="https://res.cloudinary.com/dgvg8lsw3/image/upload/v1736256249/Luisito_png_cfhgb1.png" alt="Logo" class="h-16 brightness-0 invert object-contain">
+            <a href="#registro" id="nav-cta" class="px-8 py-3 rounded-2xl font-black bg-white text-emerald-900 text-sm">RESERVAR AHORA</a>
         </div>
     </nav>
 
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="Donde-queda-Minca-en-Santa-Marta 2.jpg" alt="Portada" class="w-full h-full object-cover hero-zoom" onerror="this.src='https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2070&auto=format&fit=crop'">
+            <img src="Donde-queda-Minca-en-Santa-Marta 2.jpg" alt="Portada" class="w-full h-full object-cover hero-zoom" onerror="this.src='https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600'">
             <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-slate-50"></div>
         </div>
         <div class="relative z-10 text-center text-white px-6">
-            <h1 class="text-7xl md:text-[10rem] font-black mb-8 tracking-tighter leading-none">MINCA <br><span class="text-emerald-400 italic">MÁGICA</span></h1>
-            <a href="#registro" class="px-14 py-7 bg-emerald-500 hover:bg-emerald-400 text-white rounded-3xl text-2xl font-black shadow-2xl transition-all inline-block">¡RESERVAR MI CUPO!</a>
+            <h1 class="text-6xl md:text-9xl font-black mb-8 tracking-tighter">MINCA <span class="text-emerald-400 italic">MÁGICA</span></h1>
+            <a href="#registro" class="px-10 py-5 bg-emerald-500 text-white rounded-2xl text-xl font-black shadow-2xl inline-block">¡RESERVAR CUPO!</a>
         </div>
     </section>
 
-    <section id="registro" class="py-24 bg-slate-50 px-6">
-        <div class="max-w-3xl mx-auto">
-            <div class="bg-white rounded-[3rem] p-8 md:p-16 shadow-2xl border border-slate-100">
-                <div class="text-center mb-12">
-                    <h2 class="text-sm font-bold text-emerald-600 tracking-widest uppercase mb-2">Paso 1 de 2</h2>
-                    <h3 class="text-4xl font-black uppercase">Datos del <span class="text-emerald-500 italic">Viajero</span></h3>
-                </div>
-                <form id="google-sheet-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="nombre" required placeholder="Nombre" class="w-full px-6 py-4 bg-slate-50 border rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500">
-                    <input type="text" name="apellido" required placeholder="Apellido" class="w-full px-6 py-4 bg-slate-50 border rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500">
-                    <input type="tel" name="whatsapp" required placeholder="WhatsApp" class="w-full px-6 py-4 bg-slate-50 border rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500">
-                    <input type="email" name="email" required placeholder="Correo" class="w-full px-6 py-4 bg-slate-50 border rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500">
-                    <div class="md:col-span-2 flex items-center gap-3">
-                        <input type="checkbox" id="datos" required class="w-5 h-5 accent-emerald-500">
-                        <label for="datos" class="text-xs text-slate-500">Acepto el tratamiento de datos personales.</label>
-                    </div>
-                    <button type="submit" id="submit-btn" class="md:col-span-2 py-6 bg-slate-900 text-white rounded-2xl font-black text-lg hover:bg-emerald-600 transition-all">
-                        CONTINUAR AL PAGO
-                    </button>
-                </form>
+    <section id="registro" class="py-20 bg-slate-50 px-6">
+        <div class="max-w-3xl mx-auto bg-white rounded-[3rem] p-8 md:p-16 shadow-2xl border border-slate-100">
+            <div class="text-center mb-10">
+                <h3 class="text-4xl font-black uppercase">Datos del <span class="text-emerald-500 italic">Viajero</span></h3>
+                <p class="text-slate-500">Primero regístrate para habilitar el pago.</p>
             </div>
+            <form id="google-sheet-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" name="nombre" required placeholder="Nombre" class="w-full px-6 py-4 bg-slate-50 border rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500">
+                <input type="text" name="apellido" required placeholder="Apellido" class="w-full px-6 py-4 bg-slate-50 border rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500">
+                <input type="tel" name="whatsapp" required placeholder="WhatsApp" class="w-full px-6 py-4 bg-slate-50 border rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500">
+                <input type="email" name="email" required placeholder="Correo" class="w-full px-6 py-4 bg-slate-50 border rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500">
+                <div class="md:col-span-2 flex items-center gap-3">
+                    <input type="checkbox" id="datos" required class="w-5 h-5 accent-emerald-500">
+                    <label for="datos" class="text-xs text-slate-500">Acepto el tratamiento de datos personales.</label>
+                </div>
+                <button type="submit" id="submit-btn" class="md:col-span-2 py-6 bg-slate-900 text-white rounded-2xl font-black text-lg hover:bg-emerald-600 transition-all">
+                    CONTINUAR AL PAGO
+                </button>
+            </form>
         </div>
     </section>
 
-    <section id="reserva" class="py-24 px-6 bg-white">
+    <section id="reserva" class="py-20 px-6 bg-white">
         <div class="max-w-4xl mx-auto text-center">
-            <div class="bg-slate-900 rounded-[4rem] p-12 md:p-24 text-white shadow-3xl">
-                <h2 class="text-5xl font-black mb-12 italic uppercase">ASEGURA TU CUPO</h2>
-                <div class="text-7xl md:text-8xl font-black mb-12 tracking-tighter">$290.000 <span class="text-xl text-slate-500 font-normal">COP</span></div>
-                <button onclick="openModal()" class="block w-full py-8 bg-emerald-500 text-slate-950 rounded-3xl text-3xl font-black shadow-2xl hover:bg-emerald-400 transition-all uppercase">RESERVAR POR NEQUI</button>
+            <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-white shadow-3xl">
+                <h2 class="text-4xl font-black mb-8 italic uppercase">ASEGURA TU CUPO</h2>
+                <div class="text-6xl md:text-7xl font-black mb-10 tracking-tighter">$290.000 <span class="text-xl text-slate-500">COP</span></div>
+                
+                <a href="https://checkout.nequi.wompi.co/l/bEXEBu" 
+                   target="_blank" 
+                   onclick="handleNequiClick()" 
+                   class="block w-full py-8 bg-emerald-500 text-slate-950 rounded-3xl text-3xl font-black shadow-2xl hover:bg-emerald-400 transition-all uppercase">
+                   RESERVAR POR NEQUI
+                </a>
             </div>
         </div>
     </section>
 
     <div id="modal-whatsapp" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
         <div class="bg-slate-900 rounded-3xl p-8 max-w-md w-full text-center border border-emerald-500/30">
-            <h3 class="text-2xl font-black text-white mb-4 italic">¡CASI LISTO!</h3>
-            <p class="text-slate-300 mb-6">Envíanos el comprobante por WhatsApp para confirmar.</p>
+            <h3 class="text-2xl font-black text-white mb-4 italic uppercase">¡CASI LISTO!</h3>
+            <p class="text-slate-300 mb-6">Si ya realizaste el pago en la ventana anterior, envíanos el comprobante aquí.</p>
             <a href="https://wa.me/573209344964?text=Hola!%20Acabo%20de%20realizar%20mi%20pago" target="_blank" class="block w-full py-5 bg-emerald-500 text-slate-950 rounded-2xl text-xl font-black mb-3">ENVIAR COMPROBANTE</a>
-            <button onclick="closeModal()" class="text-slate-500 text-xs font-bold uppercase">Cerrar</button>
+            <button onclick="closeModal()" class="text-slate-500 text-xs font-bold uppercase">Volver</button>
         </div>
     </div>
 
@@ -90,39 +84,46 @@
         lucide.createIcons();
         const navbar = document.getElementById('navbar');
         const logo = document.getElementById('logo');
-        const navCta = document.getElementById('nav-cta');
         const modal = document.getElementById('modal-whatsapp');
         const form = document.getElementById('google-sheet-form');
         const btn = document.getElementById('submit-btn');
 
-        // Scroll Navbar
+        // Navbar Scroll
         window.addEventListener('scroll', () => {
             if (window.scrollY > 80) {
                 navbar.classList.add('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3');
                 logo.classList.remove('brightness-0', 'invert');
-                navCta.classList.replace('bg-white', 'bg-emerald-600');
-                navCta.classList.replace('text-emerald-900', 'text-white');
             } else {
                 navbar.classList.remove('bg-white/90', 'backdrop-blur-xl', 'shadow-2xl', 'py-3');
                 logo.classList.add('brightness-0', 'invert');
-                navCta.classList.replace('bg-emerald-600', 'bg-white');
-                navCta.classList.replace('text-white', 'text-emerald-900');
             }
         });
 
-        // Modal Functions
-        function openModal() { modal.classList.replace('hidden', 'flex'); }
-        function closeModal() { modal.classList.replace('flex', 'hidden'); }
+        // FUNCIONES DE PAGO
+        function handleNequiClick() {
+            // Espera un momento antes de mostrar el modal para que el usuario vea el checkout primero
+            setTimeout(() => {
+                modal.classList.replace('hidden', 'flex');
+            }, 1000);
+        }
 
-        // Google Sheets
+        function closeModal() {
+            modal.classList.replace('flex', 'hidden');
+        }
+
+        // GOOGLE SHEETS
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec';
 
         form.addEventListener('submit', e => {
             e.preventDefault();
             btn.disabled = true;
-            btn.innerHTML = "PROCESANDO...";
+            btn.innerHTML = "REGISTRANDO...";
 
-            fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(form)})
+            fetch(scriptURL, { 
+                method: 'POST', 
+                mode: 'no-cors', // Importante para Google Scripts
+                body: new FormData(form)
+            })
             .then(() => {
                 btn.innerHTML = "¡REGISTRO EXITOSO!";
                 btn.style.backgroundColor = "#10b981";
@@ -133,7 +134,7 @@
             .catch(error => {
                 console.error('Error!', error.message);
                 btn.disabled = false;
-                btn.innerHTML = "CONTINUAR AL PAGO";
+                btn.innerHTML = "INTENTAR DE NUEVO";
             });
         });
     </script>
