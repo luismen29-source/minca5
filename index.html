@@ -182,7 +182,23 @@
           modal.classList.add('hidden');
           // Baja suavemente a la sección de planes (línea 125 aprox)
           document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
-          
+          .then(response => {
+    // 1. Mostramos el modal (esto ya lo tienes)
+    const modal = document.getElementById('modal-exito');
+    modal.classList.remove('hidden');
+
+    // 2. PEGA ESTO AQUÍ: Configuramos el botón del modal
+    const btnContinuar = document.getElementById('btn-continuar');
+    
+    btnContinuar.onclick = function() {
+        // Esta es la orden para ir a la pasarela de pago
+        window.location.href = "https://checkout.nequi.wompi.co/l/leIwcI";
+    };
+
+    // 3. Reset del botón principal (esto ya lo tienes)
+    botonPago.innerHTML = "<span>CONTINUAR AL PAGO</span>";
+    botonPago.disabled = false;
+})
           // Reset del botón original
           botonPago.innerHTML = "<span>CONTINUAR AL PAGO</span>";
           botonPago.disabled = false;
