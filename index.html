@@ -186,6 +186,27 @@
                 </div>
             </div>
         </div>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec';
+const form = document.getElementById('google-sheet-form');
+const btn = document.getElementById('submit-btn');
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.innerHTML = "PROCESANDO...";
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            btn.innerHTML = "¡DATOS GUARDADOS!";
+            btn.classList.add('bg-emerald-500');
+            // Scroll suave a la zona de pago
+            document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert("Hubo un error al guardar tus datos, intenta de nuevo.");
+            btn.disabled = false;
+            btn.innerHTML = "CONTINUAR AL PAGO";
+        });
+});
     </section> <!-- Modal WhatsApp -->
     <div id="modal-whatsapp" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
         <div class="bg-slate-900 rounded-3xl p-8 md:p-12 max-w-md w-full text-center border border-emerald-500/30 shadow-2xl">
