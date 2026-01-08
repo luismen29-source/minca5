@@ -244,38 +244,28 @@
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
         });
-        // Conexión con Google Sheets de Luisito el Viajero
-        // Conexión con Google Sheets de Luisito el Viajero
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec';
+ // Conexión con Google Sheets de Luisito el Viajero
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec'; 
         const form = document.getElementById('google-sheet-form');
         const btn = document.getElementById('submit-btn');
 
         if (form) {
             form.addEventListener('submit', e => {
                 e.preventDefault();
+                
+                // Efecto visual de carga premium
                 btn.disabled = true;
-                btn.innerHTML = "PROCESANDO REGISTRO...";
+                btn.innerHTML = `
+                    <span class="flex items-center justify-center gap-2">
+                        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        PROCESANDO REGISTRO...
+                    </span>`;
 
-                fetch(scriptURL, { 
-                    method: 'POST', 
-                    mode: 'no-cors', 
-                    body: new FormData(form)
-                })
-                .then(() => {
-                    btn.innerHTML = "¡REGISTRO EXITOSO! DESLIZA ABAJO";
-                    btn.style.backgroundColor = "#10b981";
-                    setTimeout(() => {
-                        document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
-                    }, 1500);
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    alert("Error al guardar. Intenta de nuevo.");
-                    btn.disabled = false;
-                    btn.innerHTML = "CONTINUAR AL PAGO";
-                });
-            });
-        }
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => {
+                        // Cambio a estado de éxito
+                        btn.innerHTML = "¡REGISTRO EXITOSO! ELIGE TU FECHA ABAJO";
+                        btn.style.backgroundColor = "#10b981"; // Verde esmeralda
                         
                         // Scroll suave a la sección de pago después de 1.5 segundos
                         setTimeout(() => {
@@ -283,6 +273,16 @@
                             if (sectionReserva) {
                                 sectionReserva.scrollIntoView({ behavior: 'smooth' });
                             }
+                        }, 1500);
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        alert("Hubo un pequeño error al guardar tus datos. Por favor, intenta de nuevo o escríbenos por WhatsApp.");
+                        btn.disabled = false;
+                        btn.innerHTML = "CONTINUAR AL PAGO";
+                    });
+            });
+        }
                         }, 1500);
                     })
                     .catch(error => {
