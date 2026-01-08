@@ -122,6 +122,41 @@
 </form>
     </div>
 </section>
+        <script>
+  // Conectamos con el formulario
+  const formulario = document.querySelector('form');
+  const botonPago = document.getElementById('submit-btn');
+
+  formulario.addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita que la página se reinicie sola
+
+    // Cambiamos el estilo del botón para mostrar que está cargando
+    botonPago.innerHTML = "<span>REGISTRANDO...</span>";
+    botonPago.style.opacity = "0.6";
+    botonPago.disabled = true;
+
+    // 1. ENVÍO A GOOGLE SHEETS
+    // Reemplaza el link de abajo por tu URL de Google Apps Script (la que termina en /exec)
+    const scriptURL = 'TU_URL_DE_GOOGLE_APPS_SCRIPT_AQUI';
+
+    fetch(scriptURL, { 
+      method: 'POST', 
+      body: new FormData(formulario)
+    })
+    .then(response => {
+      // 2. MENSAJE DE ÉXITO
+      alert("¡Registro exitoso! Ahora te llevaremos al pago.");
+
+      // 3. REDIRECCIÓN A WOMPI/NEQUI
+      window.location.href = "https://checkout.nequi.wompi.co/l/leIwcI";
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      // Si el Excel falla, igual los mandamos a pagar para no perder la venta
+      window.location.href = "https://checkout.nequi.wompi.co/l/leIwcI";
+    });
+  });
+</script>
     </section> <!-- EL PLAN INCLUYE - Detalle Exacto -->
     <section class="py-24 bg-slate-100 px-6">
         <div class="max-w-7xl mx-auto">
