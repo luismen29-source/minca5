@@ -261,7 +261,20 @@
                         PROCESANDO REGISTRO...
                     </span>`;
 
-                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                fetch(scriptURL, { 
+    method: 'POST', 
+    mode: 'no-cors', // Esta línea es la que soluciona el error
+    body: new FormData(form)
+})
+.then(() => {
+    // Al usar no-cors, el éxito se asume directamente
+    btn.innerHTML = "¡REGISTRO EXITOSO! ELIGE TU FECHA ABAJO";
+    btn.style.backgroundColor = "#10b981"; 
+    
+    setTimeout(() => {
+        document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
+    }, 1500);
+})
                     .then(response => {
                         // Cambio a estado de éxito
                         btn.innerHTML = "¡REGISTRO EXITOSO! ELIGE TU FECHA ABAJO";
