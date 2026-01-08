@@ -122,6 +122,7 @@
 </form>
     </div>
 </section>
+        <section id="reserva" class="py-24 bg-slate-100 px-6">
         <div id="modal-exito" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
   <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl transform transition-all">
     <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -143,7 +144,65 @@
 
   formulario.addEventListener('submit', function(e) {
     e.preventDefault(); // Evita que la página se reinicie sola
+</div> <div id="modal-exito" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+  <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl">
+    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+    <h3 class="text-2xl font-black text-slate-900 mb-2 uppercase">¡Registro Exitoso!</h3>
+    <p class="text-slate-500 mb-6">Tus datos se guardaron. Ahora puedes elegir tu plan abajo.</p>
+    <button id="btn-continuar" class="w-full py-4 bg-emerald-600 text-white rounded-2xl font-black uppercase">
+      Ver Planes y Reservar
+    </button>
+  </div>
+</div>
 
+<script>
+  const formulario = document.querySelector('form');
+  const botonPago = document.getElementById('submit-btn');
+  const scriptURL = 'TU_URL_DE_GOOGLE_APPS_SCRIPT_AQUI'; // <--- PEGA TU LINK AQUÍ
+
+  formulario.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    // Cambiamos el botón a estado de carga
+    botonPago.innerHTML = "<span>REGISTRANDO...</span>";
+    botonPago.disabled = true;
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(formulario)})
+      .then(response => {
+        // Mostramos el modal personalizado
+        const modal = document.getElementById('modal-exito');
+        modal.classList.remove('hidden');
+
+        // Al hacer clic en el botón del modal, bajamos a los planes
+        document.getElementById('btn-continuar').onclick = function() {
+          modal.classList.add('hidden');
+          // Baja suavemente a la sección de planes (línea 125 aprox)
+          document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
+          
+          // Reset del botón original
+          botonPago.innerHTML = "<span>CONTINUAR AL PAGO</span>";
+          botonPago.disabled = false;
+        };
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        alert("Hubo un error al guardar los datos, pero puedes continuar.");
+      });
+  });
+</script>
+
+</body> ```
+
+### Notas muy importantes:
+1.  **ID de reserva:** Para que la página "baje" sola, asegúrate de que la sección de los planes (la que empieza en la línea 125 de tu imagen `image_3dc0e1.png`) tenga el atributo `id="reserva"`.
+2.  **Reemplaza la URL:** No olvides poner tu link de Google que termina en `/exec` dentro de las comillas en la variable `scriptURL`.
+3.  **No mezcles:** Asegúrate de que el código de JavaScript esté envuelto entre las etiquetas `<script>` y `</script>`, de lo contrario el navegador intentará leerlo como texto normal y se verá en la pantalla.
+
+¿Quieres que te ayude a verificar si el `id="reserva"` quedó bien puesto en la sección de tus planes?
     // Cambiamos el estilo del botón para mostrar que está cargando
     botonPago.innerHTML = "<span>REGISTRANDO...</span>";
     botonPago.style.opacity = "0.6";
