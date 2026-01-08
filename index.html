@@ -186,27 +186,56 @@
                 </div>
             </div>
         </div>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec';
-const form = document.getElementById('google-sheet-form');
-const btn = document.getElementById('submit-btn');
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    btn.disabled = true;
-    btn.innerHTML = "PROCESANDO...";
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            btn.innerHTML = "¡DATOS GUARDADOS!";
-            btn.classList.add('bg-emerald-500');
-            // Scroll suave a la zona de pago
-            document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
-        })
-        .catch(error => {
-            console.error('Error!', error.message);
-            alert("Hubo un error al guardar tus datos, intenta de nuevo.");
-            btn.disabled = false;
-            btn.innerHTML = "CONTINUAR AL PAGO";
+       <script>
+    // 1. Configuración de Google Sheets
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwaDYV2t_Tt4zBRAIPL6aKOeWv6dtLGC8kfxlwBkyWUsYqDYkGSGZKGm_Rhpbp9s2s/exec';
+    const form = document.getElementById('google-sheet-form');
+    const btn = document.getElementById('submit-btn');
+
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault(); // Evita que la página se recargue y suba al inicio
+            btn.disabled = true;
+            btn.innerHTML = "PROCESANDO REGISTRO...";
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                mode: 'no-cors', // Indispensable para evitar errores de bloqueo
+                body: new FormData(form)
+            })
+            .then(() => {
+                btn.innerHTML = "¡REGISTRO EXITOSO!";
+                btn.style.backgroundColor = "#10b981";
+                // Desplazamiento suave a la sección de pago
+                setTimeout(() => {
+                    document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
+                }, 800);
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                btn.disabled = false;
+                btn.innerHTML = "CONTINUAR AL PAGO";
+            });
         });
-});
+    }
+
+    // 2. Funciones para el Modal de WhatsApp
+    function openModal() {
+        const modal = document.getElementById('modal-whatsapp');
+        if (modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modal-whatsapp');
+        if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    }
+</script>
     </section> <!-- Modal WhatsApp -->
     <div id="modal-whatsapp" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
         <div class="bg-slate-900 rounded-3xl p-8 md:p-12 max-w-md w-full text-center border border-emerald-500/30 shadow-2xl">
